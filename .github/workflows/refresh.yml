@@ -23,7 +23,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install llms-mirror
-        run: pip install llms-mirror
+        # PyPI 0.1.1 cannot read index-of-indexes llms.txt (Razorpay); the
+        # recursive fix is llms-mirror 0.1.2 in git @955e3a2. Revert this to
+        # plain "pip install llms-mirror" once 0.1.2 is published to PyPI.
+        run: pip install "llms-mirror @ git+https://github.com/naelrudd/llms-mirror@955e3a217586f3cf24fbe66f555257a8dd32a667"
 
       - name: Mirror docs
         run: llms-mirror mirror https://razorpay.com/docs/llms.txt --out . --no-git
