@@ -1,0 +1,22 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Glossary
+
+> List of commonly used terms related to Razorpay Payment Links.
+
+Available in
+🇮🇳 India
+🇲🇾 Malaysia
+🇸🇬 Singapore
+🇺🇸 United States
+
+The following table lists all the commonly used terms and their definitions used in Payment Links:
+
+| Terms | Description |
+| - | - |
+| Expiry Date | The Expiry Date is the date after which the customer cannot pay for the Payment Link. |
+| Payment Link | A short URL added in the invoice notifications that are sent to the customers via email or SMS. The customers can click the link to make online payments. |
+| Partial Payment | A feature using which customer can make payments in installments. This feature is available only on Standard Payment Links. |
+| Reminders | SMS reminders sent to customers to notify them about outstanding payments. |

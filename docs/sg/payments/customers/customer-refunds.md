@@ -1,0 +1,144 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Customer Refunds
+
+> Request refund if you are a customer of businesses using Razorpay. Track refunds using payment, order, booking or refund id or raise a dispute chargeback.
+
+Available in
+🇮🇳 India
+🇲🇾 Malaysia
+🇸🇬 Singapore
+🇺🇸 United States
+
+If you have made payments to a business that uses Razorpay and are looking for a refund:
+
+> [card] [1. Contact Business for Refunds](https://razorpay.com/docs/sg/payments/customers/customer-refunds.md#1-contact-business-for-refund)
+
+> [card] [2. Raise a Chargeback](https://razorpay.com/docs/sg/payments/customers/customer-refunds.md#2-raise-a-dispute-chargeback)
+
+> [!NOTE]
+>
+> **Handy Tips**
+>
+> Razorpay is a payment solution provider and **cannot make refunds on behalf of the business**.
+
+## 1. Contact Business for Refund
+
+If you have not received the products or services or are dissatisfied with the products or services received and want a refund, contact the business and request a refund.
+
+> [accordion] If you have made the payment on the business website or app, you can find the support details on their contact us/support page.
+>
+> ![Refund Id tracking - Sample Contact Us Page](https://razorpay.com/docs/build/browser/assets/images/customer-refunds-contact-us-website.jpg)
+
+> [accordion] If you have made payments using a Payment Link or a Payment Page, you can view the support details on the same page.
+>
+> ![Refund Id tracking - Sample Support Page](https://razorpay.com/docs/build/browser/assets/images/customer-refunds-payment-page-contact-us.jpg)
+
+### Refund Communication
+
+If a customer is asking for a refund, the banking partner provides a unique reference number when a refund is processed. The customer can use this reference number to track the refund status with the bank.
+
+As a customer, you will be notified of the specific payment to be refunded in 7-10 working days. Razorpay sends the following email communications for refunds:
+
+> [accordion] Refund Mailer
+>
+> After the business processes the refund, Razorpay sends you an email with the refund id and a unique reference number provided by the bank. This mail also contains the [Razorpay link for the refund tracker](https://razorpay.com/docs/sg/payments/customers/customer-refunds.md).
+
+## 2. Raise a Dispute (Chargeback)
+
+If you are unable to contact the business or their response is not satisfactory, contact your bank to raise a dispute.
+
+A customer can raise a dispute against a particular transaction and contact the bank through which the customer has made the payment. The bank will raise the dispute with Razorpay. We will work with the bank and assist in resolving the issue amicably.
+
+> [!NOTE]
+>
+> **Handy Tips**
+>
+> * Please wait at least 7 days from the date of payment to escalate a dispute for an item not received. Ensure that you have given the business enough time before opening a dispute.
+> * Please provide complete details about the issue to help us decide on the best solution to resolve it.
+
+## Frequently Asked Questions (FAQs)
+
+> [accordion] What are some tips to ensure hassle-free transactions with a business?
+>
+> Follow these best practices as a customer to ensure hassle-free transactions:
+>
+> 1. Understand the product/service description before purchasing.
+> 2. Review the policies for return, refund and cancellation on the business' website.
+> 3. Only enter details on `https`-secure sites and keep your antivirus software and browsers updated.
+> 4. After receiving the product, contact the manufacturer for warranty-related defects, if any.
+> 5. Wait for 5-7 business days for issues related to bank processing and refunds.
+
+> [accordion] What should I do if I have not received my refund even after 10-12 working days?
+>
+> Ideally, refunds are credited in 10-12 working days. In case you have not received your refund, check the refund status in the Razorpay Refund Tracker. Know more about [tracking your refund using Refund](https://razorpay.com/docs/sg/payments/customers/customer-refunds.md).
+
+> [accordion] How do I check my order status after the amount is deducted from my account?
+>
+> Upon a successful transaction, you will receive a confirmation email from Razorpay Payment Aggregator and only facilitate business with online payments. For the status of the order, contact the business.
+
+> [accordion] How do I cancel my order?
+>
+> All the queries related to full or partial cancellation of orders should be routed to the business. Razorpay is a payment solution provider and does not ship or dispatch orders. Please get in touch with business for queries regarding cancellation or returns.
+>
+> After the business cancels the order and initiates the refund, the amount will be credited to your account in 7-10 days. You can check the status of your refund using the Razorpay Refund Tracker.
+
+> [accordion] Can I file a complaint if I have not received my order?
+>
+> We suggest you wait for 7-10 business days for physical goods and one business day for digital goods. If you have still not received the items, or if the items received are materially different, defective, or damaged, contact the business to resolve the issue.
+>
+> Include the following details while sending an email to the business:
+>
+> * Date of transaction.
+> * Amount of transaction.
+> * Order ID shared by the business.
+> * Payment ID shared by Razorpay(pay\_9uxxxxxxx34z).
+> * Description of the problem.
+>
+> If the business does not respond to your emails and phone calls within 3-5 working days, contact your bank to [raise a dispute](#2-raise-a-dispute-chargeback).
+
+> [accordion] How do I report a fraudulent transaction?
+>
+> Please raise a request with the Razorpay [Support team](https://razorpay.com/sg/support/) with the transaction details and our team will investigate this further.
+
+> [accordion] I do not recognise the transaction that I have been charged for. Can you help me?
+>
+> Please raise a request with the Razorpay [Support team](https://razorpay.com/sg/support/) and provide the following details:
+>
+> * A common email id you use for making online transactions.
+> * Amount and date of debit.
+> * The last four digits of the card were used in case this was a card transaction.
+>
+> We will get back to you at the earliest.
+
+> [accordion] I have done duplicate transactions towards the same order/service. How do I get a refund?
+>
+> Razorpay is a Payment Aggregator and only facilitate the seller with online payments. We request you to contact the seller with the transaction details for a refund.
+
+> [accordion] What should I do if I do not receive a payment confirmation mail from Razorpay?
+>
+> You can raise a [support request](https://razorpay.com/sg/support/):
+>
+> 1. Select the category as `I am a customer`.
+> 2. Choose the nature of your request.
+> 3. Provide your email id, the screenshot of the debit and transaction ID received from the seller.
+>
+> We will get back to you at the earliest.
+
+> [accordion] Why does it take so long for a refund to be credited to my account?
+>
+> Several factors and processes are involved during a refund. Hence, we recommend waiting for 10-12 working days.
+
+> [accordion] Can I share my card details or passwords with the Razorpay support staff?
+>
+> No, do not share your card details, CVV number, OTP or PIN with anyone, including Razorpay support staff.
+>
+> Only in the rare case of a dispute does Razorpay support ask you for the first six and last four digits of your card number to locate a particular payment id.
+
+> [accordion] What should I do if I have not received a refund confirmation mail from Razorpay?
+>
+> After every successful refund, you receive a refund confirmation email from Razorpay. Check between 7-10 days for the refund to reflect.
+>
+> Contact the business if you have not received the email, as only businesses can initiate refunds.

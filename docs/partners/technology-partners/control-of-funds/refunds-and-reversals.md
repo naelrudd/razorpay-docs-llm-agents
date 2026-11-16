@@ -1,0 +1,37 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Refunds and Reversals
+
+> Process refunds and reversals using APIs. Refund the base transaction amount and reverse platform and third-party fees.
+
+Available in
+🇮🇳 India
+
+You can create refunds and reversals in 2 cases:
+
+* **The base transaction amount is refunded** \
+
+  You can refund the base transaction amount with or without reversing the platform and third-party fees.
+
+* **The platform and third-party fees are reversed** \
+
+  You can reverse the platform and third-party fees with or without refunding the base transaction amount.
+
+### Create Refund Without Reversals
+
+To create refunds without reversals, you can process [Normal Refunds](https://razorpay.com/docs/api/refunds/create-normal.md) or [Instant Refunds](https://razorpay.com/docs/api/refunds/create-instant.md) using our APIs. Know more about [Instant Refunds](https://razorpay.com/docs/payments/refunds/instant.md).
+
+### Create Refund With Reversals
+
+Sub-merchants can process refunds from their Dashboards. Alternatively, you (the Platform) can process refunds on behalf of sub-merchants. If you are processing the refund, you can specify whether the platform fees should also be refunded or not using the [Refund Payments and Reverse Transfer from a Linked Account](https://razorpay.com/docs/api/payments/route.md) API.
+
+### Create Reversals Only for Platform or Third-Party Fees
+
+Every platform fee or third-party fee is linked with a Transfer. To reverse the platform or third-party fees, use the [Reverse a Transfer API](https://razorpay.com/docs/api/payments/route/reverse-a-transfer.md).
+
+## Related Information
+
+* [Set up Platform and Third-Party Accounts](https://razorpay.com/docs/partners/technology-partners/control-of-funds/set-up-accounts.md)
+* [Process Platform and Third-Party Fees](https://razorpay.com/docs/partners/technology-partners/control-of-funds/process-fees.md)

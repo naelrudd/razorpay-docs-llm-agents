@@ -1,0 +1,399 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# 2. Fetch and Manage Tokens
+
+> Retrieve tokens using Razorpay APIs to create subsequent payments.
+
+Available in
+🇮🇳 India
+
+Once you capture a payment, Razorpay Checkout returns a `razorpay_payment_id`. You can use this id to fetch the `token_id`, which is used to create and charge subsequent payments.
+
+You can retrieve the `token_id` using the [Dashboard](https://razorpay.com/docs/payments/recurring-payments/create.md#3-search-for-the-token) or the APIs given below.
+
+## 2.1. Fetch Token by Payment ID
+
+The following endpoint fetches the `token_id` using a `payment_id`.
+
+`GET /payments/:id`
+
+> [!NOTE]
+>
+> ```bash Curl theme={null}
+> curl -u <YOUR_KEY_ID>:<YOUR_KEY_SECRET> \
+> -X GET https://api.razorpay.com/v1/payments/pay_1Aa00000000002
+>
+> ```
+>
+> ```java Java theme={null}
+> RazorpayClient razorpay = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+>
+> String paymentId = "pay_1Aa00000000002";
+>
+> Payment payment = razorpay.payments.fetch(paymentId)
+>
+> ```
+>
+> ```php PHP theme={null}
+> $api = new Api($key_id, $secret);
+>
+> $api->payment->fetch($paymentId);
+> ```
+>
+> ```javascript Node.js theme={null}
+> var instance = new Razorpay({ key_id: 'YOUR_KEY_ID', key_secret: 'YOUR_SECRET' })
+>
+> instance.payments.fetch(paymentId)
+>
+> ```
+>
+> ```python Python theme={null}
+> client = razorpay.Client(auth=("YOUR_ID", "YOUR_SECRET"))
+>
+> client.payment.fetch(paymentId)
+>
+> ```
+>
+> ```ruby Ruby theme={null}
+> require "razorpay"
+> Razorpay.setup('YOUR_KEY_ID', 'YOUR_SECRET')
+>
+> paymentId = "pay_FHfAzEJ51k8NLj"
+>
+> Razorpay::Payment.fetch(paymentId)
+>
+> ```
+>
+> ```go Go theme={null}
+> import ( razorpay "github.com/razorpay/razorpay-go" )
+> client := razorpay.NewClient("YOUR_KEY_ID", "YOUR_SECRET")
+>
+> body, err := client.Payment.Fetch("<paymentId>", nil, nil)
+>
+> ```
+>
+> ```csharp .NET theme={null}
+> RazorpayClient client = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+>
+> string paymentid = "pay_FHfqtkRzWvxky4";
+>
+> Payment payment = client.Payment.Fetch(paymentid);
+> ```
+>
+> ```json Authorisation Payment theme={null}
+> {
+>   "id": "pay_QDhVJ5M23wt4rh",
+>   "entity": "payment",
+>   "amount": 1000,
+>   "currency": "INR",
+>   "status": "failed",
+>   "order_id": "order_QDhT2PqFJvtg4y",
+>   "invoice_id": null,
+>   "international": false,
+>   "method": "upi",
+>   "amount_refunded": 0,
+>   "refund_status": null,
+>   "captured": false,
+>   "description": null,
+>   "card_id": null,
+>   "bank": null,
+>   "wallet": null,
+>   "vpa": "success@razorpay",
+>   "email": "gaurav.kumar@example.com",
+>   "contact": "+919123456780",
+>   "customer_id": "cust_Q0g6LTYw3obZEn",
+>   "token_id": "token_QDhVJHYr5m87fF",
+>   "notes": {
+>     "notes_key_1": "Tea, Earl Grey, Hot",
+>     "notes_key_2": "Tea, Earl Grey… decaf.",
+>     "note_key 1": "Beam me up Scotty",
+>     "note_key 2": "Tea. Earl Gray. Hot.",
+>     "optimizer_provider_name": "razorpay"
+>   },
+>   "fee": null,
+>   "tax": null,
+>   "error_code": "BAD_REQUEST_ERROR",
+>   "error_description": "Payment was a dummy payment for one time mandate registration.",
+>   "error_source": "business",
+>   "error_step": "payment_initiation",
+>   "error_reason": "upi_dummy_payment",
+>   "acquirer_data": {
+>     "rrn": null
+>   },
+>   "gateway_provider": "Razorpay",
+>   "created_at": 1743490280,
+>   "upi": {
+>     "vpa": "success@razorpay"
+>   }
+> }
+> ```
+
+> [!NOTE]
+>
+> **Handy Tips**
+>
+> You can also retrieve the `token_id` via the [payment.failed webhook](https://razorpay.com/docs/api/payments/recurring-payments/webhooks.md#payment-failed).
+
+> [accordion] Path Parameters
+>
+> `id` *mandatory*
+> : `string` The unique identifier of the payment to be retrieved. For example, `pay_1Aa00000000002`.
+
+## 2.2. Fetch Tokens by Customer ID
+
+A customer can have multiple tokens and these tokens can be used to create subsequent payments for multiple products or services. The following endpoint retrieves tokens linked to a customer.
+
+> [!WARNING]
+>
+> **Watch Out!**
+>
+> * This endpoint will not fetch the details of expired and unused tokens.
+> * The UPI tokens are not populated in the API response if the `save_vpa` feature is not enabled in your account. Please raise a request with our [Support team](https://razorpay.com/support/#request) to get this activated.
+
+`GET /customers/:id/tokens`
+
+> [!NOTE]
+>
+> ```bash Curl theme={null}
+> curl -u <YOUR_KEY_ID>:<YOUR_KEY_SECRET> \
+> -X GET https://api.razorpay.com/v1/customers/cust_1Aa00000000002/tokens
+>
+> ```
+>
+> ```java Java theme={null}
+> RazorpayClient razorpay = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+>
+> String customerId = "cust_1Aa00000000002";
+>
+> List<Token> tokens = razorpay.customers.fetchTokens(customerId);
+>
+> ```
+>
+> ```php PHP theme={null}
+> $api = new Api($key_id, $secret);
+>
+> $api->customer->fetch($customerId)->tokens()->all();
+> ```
+>
+> ```javascript Node.js theme={null}
+> var instance = new Razorpay({ key_id: 'YOUR_KEY_ID', key_secret: 'YOUR_SECRET' })
+>
+> instance.customers.fetchTokens(customerId)
+>
+> ```
+>
+> ```python Python theme={null}
+> client = razorpay.Client(auth=("YOUR_ID", "YOUR_SECRET"))
+>
+> client.token.all(customerId)
+>
+> ```
+>
+> ```ruby Ruby theme={null}
+> require "razorpay"
+> Razorpay.setup('YOUR_KEY_ID', 'YOUR_SECRET')
+>
+> customerId = "cust_1Aa00000000004"
+>
+> Razorpay::Customer.fetch(customerId).fetchTokens
+>
+> ```
+>
+> ```go Go theme={null}
+> import ( razorpay "github.com/razorpay/razorpay-go" )
+> client := razorpay.NewClient("YOUR_KEY_ID", "YOUR_SECRET")
+>
+> body, err := client.Token.All("<customerId>", nil, nil)
+>
+> ```
+>
+> ```csharp .NET theme={null}
+> RazorpayClient client = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+>
+> string customerId = "cust_1Aa00000000001";
+>
+> List<Token> token = client.Customer.Fetch(customerId).Tokens();
+> ```
+>
+> ```json Response theme={null}
+> {
+>   "entity": "collection",
+>   "count": 1,
+>   "items": [
+>     {
+>       "id": "token_FHfAzGzREc1ug6",
+>       "entity": "token",
+>       "token": "9KHtest0000001",
+>       "bank": null,
+>       "wallet": null,
+>       "method": "upi",
+>       "vpa": {
+>         "username": "gaurav.kumar",
+>         "handle": "upi",
+>         "name": null
+>       },
+>       "recurring": true,
+>       "recurring_details": {
+>         "status": "confirmed",
+>         "failure_reason": null
+>       },
+>       "auth_type": null,
+>       "mrn": null,
+>       "used_at": 1595447490,
+>       "created_at": 1595447490,
+>       "start_time": 1595447455,
+>       "dcc_enabled": false
+>     }
+>   ]
+> }
+> ```
+
+> [accordion] Path Parameters
+>
+> `id` *mandatory*
+> : `string` The unique identifier of the customer for whom tokens are to be retrieved. For example, `cust_1Aa00000000002`.
+
+## 2.3. Cancel Token
+
+The following endpoint initiates cancellation of the mandate from NPCI.
+
+`PUT /customers/:customer_id/tokens/:token_id/cancel`
+
+```bash Request theme={null}
+curl -u [YOUR_KEY_ID]:[YOUR_KEY_SECRET] \
+-X PUT https://api.razorpay.com/v1/customers/cust_1Aa00000000002/tokens/token_1Aa00000000001/cancel
+```
+
+```json Response theme={null}
+{
+      "status": "cancellation_initiated"
+}
+```
+
+> [accordion] Path Parameters
+>
+> `customer_id` *mandatory*
+> : `string` The unique identifier of the customer with whom the token is linked. For example, `cust_1Aa00000000002`.
+>
+> `token_id` *mandatory*
+> : `string` The unique identifier of the token that is to be cancelled. For example, `token_1Aa00000000001`.
+
+## 2.4. Delete Tokens
+
+> [!WARNING]
+>
+> **Watch Out!**
+>
+> Deleting a token removes it from Razorpay's database. The deleted token will not appear on the Dashboard or when all tokens are fetched. However, it does not cancel the mandate. If you wish to cancel the mandate from NPCI, use the [Cancel Token API](#2-3-cancel-token).
+
+The following endpoint deletes a token.
+
+`DELETE /customers/:customer_id/tokens/:token_id`
+
+> [!NOTE]
+>
+> ```bash Curl theme={null}
+> curl -u [YOUR_KEY_ID]:[YOUR_KEY_SECRET] \
+> -X DELETE https://api.razorpay.com/v1/customers/cust_1Aa00000000002/tokens/token_1Aa00000000001
+>
+> ```
+>
+> ```java Java theme={null}
+> RazorpayClient razorpay = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+>
+> String customerId = "cust_1Aa00000000002";
+>
+> String tokenId = "token_1Aa00000000001";
+>
+> Customer customer = razorpay.customers.deleteToken(customerId, tokenId);
+>
+> ```
+>
+> ```php PHP theme={null}
+> $api = new Api($key_id, $secret);
+>
+> $api->customer->fetch($customerId)->tokens()->delete($tokenId);
+> ```
+>
+> ```javascript Node.js theme={null}
+> var instance = new Razorpay({ key_id: 'YOUR_KEY_ID', key_secret: 'YOUR_SECRET' })
+>
+> instance.customers.deleteToken(customerId, tokenId)
+>
+> ```
+>
+> ```python Python theme={null}
+> client = razorpay.Client(auth=("YOUR_ID", "YOUR_SECRET"))
+>
+> client.token.delete(customerId, tokenId)
+>
+> ```
+>
+> ```ruby Ruby theme={null}
+> require "razorpay"
+> Razorpay.setup('YOUR_KEY_ID', 'YOUR_SECRET')
+>
+> customerId = "cust_1Aa00000000004"
+>
+> tokenId = "token_Hxe0skTXLeg9pF"
+>
+> Razorpay::Customer.fetch(customerId).deleteToken(tokenId)
+>
+> ```
+>
+> ```go Go theme={null}
+> import ( razorpay "github.com/razorpay/razorpay-go" )
+> client := razorpay.NewClient("YOUR_KEY_ID", "YOUR_SECRET")
+>
+> body, err := client.Token.Delete("<customerId>", "<tokenId>", nil, nil)
+>
+> ```
+>
+> ```ruby Ruby theme={null}
+> require "razorpay"
+> Razorpay.setup('YOUR_KEY_ID', 'YOUR_SECRET')
+>
+> customerId = "cust_1Aa00000000004"
+>
+> tokenId = "token_Hxe0skTXLeg9pF"
+>
+> Razorpay::fetch(customerId).deleteToken(tokenId)
+>
+> ```
+>
+> ```java Java theme={null}
+> RazorpayClient razorpay = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+>
+> String customerId = "cust_DtHaBuooGHTuyZ";
+>
+> String tokenId = "token_HouA2OQR5Z2jTL";
+>
+> Customer customer = instance.customers.deleteToken(customerId, tokenId);
+>
+> ```
+>
+> ```csharp .NET theme={null}
+> RazorpayClient client = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+>
+> string customerId = "cust_Z6t7VFTb9xHeOs";
+>
+> string tokenId = "token_1Aa00000000001";
+>
+> Customer customer = client.Customer.Fetch(customerId).DeleteToken(tokenId);
+> ```
+>
+> ```json Response theme={null}
+> {
+>     "deleted": true
+> }
+> ```
+
+> [accordion] Path Parameters
+>
+> `customer_id` *mandatory*
+> : `string` The unique identifier of the customer with whom the token is linked. For example, `cust_1Aa00000000002`.
+>
+> `token_id` *mandatory*
+> : `string` The unique identifier of the token that is to be deleted. For example, `token_1Aa00000000001`.

@@ -1,0 +1,367 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Payment Links Entity
+
+> Entity parameters and sample code for Payment Links API.
+
+Available in
+🇮🇳 India
+🇲🇾 Malaysia
+🇸🇬 Singapore
+🇺🇸 United States
+
+The Payment Link entity has the following fields:
+
+```json Standard Payment Link Entity theme={null}
+{
+  "accept_partial": true,
+  "amount": 1000,
+  "amount_paid": 0,
+  "callback_method": "get",
+  "callback_url": "https://example-callback-url.com/",
+  "cancelled_at": 1591097270,
+  "created_at": 1591097057,
+  "currency": "USD",
+  "customer": {
+    "contact": "<phone>",
+    "email": "<email>",
+    "name": "<name>"
+  },
+  "description": "Payment for policy no #23456",
+  "expire_by": 1691097057,
+  "expired_at": 0,
+  "first_min_partial_amount": 100,
+  "id": "plink_ExjpAUN3gVHrPJ",
+  "notes": {
+    "policy_name": "Life Insurance Policy"
+  },
+  "notify": {
+    "email": true,
+    "sms": true
+  },
+  "payments": [],
+  "reference_id": "TS1989",
+  "reminder_enable": true,
+  "reminders": {
+    "status": "failed"
+  },
+  "short_url": "https://rzp.io/i/nxrHnLJ",
+  "status": "cancelled",
+  "updated_at": 1591097270,
+  "user_id": ""
+}
+```
+
+```json UPI Payment Link Entity theme={null}
+{
+  "accept_partial": false,
+  "amount": 1000,
+  "amount_paid": 0,
+  "cancelled_at": 1591097270,
+  "created_at": 1591097057,
+  "currency": "USD",
+  "customer": {
+    "contact": "<phone>",
+    "email": "<email>",
+    "name": "<name>"
+  },
+  "description": "Payment for policy no #23456",
+  "expire_by": 1691097057,
+  "expired_at": 0,
+  "first_min_partial_amount": 0,
+  "id": "plink_ExjpAUN3gVHrPJ",
+  "upi_link": "true",
+  "notes": {
+    "policy_name": "Life Insurance Policy"
+  },
+  "notify": {
+    "email": true,
+    "sms": true
+  },
+  "payments": null,
+  "reference_id": "TS1989",
+  "reminder_enable": true,
+  "reminders": {
+    "status": "failed"
+  },
+  "short_url": "https://rzp.io/i/nxrHnLJ",
+  "source": "",
+  "source_id": "",
+  "status": "created",
+  "updated_at": 1591097270,
+  "user_id": ""
+}
+```
+
+```json Standard Payment Link Entity theme={null}
+{
+  "amount": 1000,
+  "amount_paid": 0,
+  "callback_method": "get",
+  "callback_url": "https://example-callback-url.com/",
+  "cancelled_at": 1591097270,
+  "created_at": 1591097057,
+  "currency": "USD",
+  "customer": {
+    "contact": "<phone>",
+    "email": "<email>",
+    "name": "<name>"
+  },
+  "description": "Payment for policy no #23456",
+  "expire_by": 1691097057,
+  "expired_at": 0,
+  "id": "plink_ExjpAUN3gVHrPJ",
+  "notes": {
+    "policy_name": "Life Insurance Policy"
+  },
+  "notify": {
+    "email": true,
+    "sms": true
+  },
+  "payments": [],
+  "reference_id": "TS1989",
+  "reminder_enable": true,
+  "reminders": {
+    "status": "failed"
+  },
+  "short_url": "https://rzp.io/i/nxrHnLJ",
+  "status": "cancelled",
+  "updated_at": 1591097270,
+  "user_id": ""
+}
+```
+
+```json UPI Payment Link Entity theme={null}
+{
+  "amount": 1000,
+  "amount_paid": 0,
+  "cancelled_at": 1591097270,
+  "created_at": 1591097057,
+  "currency": "USD",
+  "customer": {
+    "contact": "<phone>",
+    "email": "<email>",
+    "name": "<name>"
+  },
+  "description": "Payment for policy no #23456",
+  "expire_by": 1691097057,
+  "expired_at": 0,
+  "id": "plink_ExjpAUN3gVHrPJ",
+  "upi_link": "true",
+  "notes": {
+    "policy_name": "Life Insurance Policy"
+  },
+  "notify": {
+    "email": true,
+    "sms": true
+  },
+  "payments": null,
+  "reference_id": "TS1989",
+  "reminder_enable": true,
+  "reminders": {
+    "status": "failed"
+  },
+  "short_url": "https://rzp.io/i/nxrHnLJ",
+  "source": "",
+  "source_id": "",
+  "status": "created",
+  "updated_at": 1591097270,
+  "user_id": ""
+}
+```
+
+```json Standard Payment Link Entity theme={null}
+{
+  "accept_partial": true,
+  "amount": 1000,
+  "amount_paid": 0,
+  "callback_method": "get",
+  "callback_url": "https://example-callback-url.com/",
+  "cancelled_at": 1591097270,
+  "created_at": 1591097057,
+  "currency": "USD",
+  "customer": {
+    "contact": "<phone>",
+    "email": "<email>",
+    "name": "<name>"
+  },
+  "description": "Payment for policy no #23456",
+  "expire_by": 1691097057,
+  "expired_at": 0,
+  "first_min_partial_amount": 100,
+  "id": "plink_ExjpAUN3gVHrPJ",
+  "notes": {
+    "policy_name": "Life Insurance Policy"
+  },
+  "notify": {
+    "email": true,
+    "sms": true
+  },
+  "payments": [],
+  "reference_id": "TS1989",
+  "reminder_enable": true,
+  "reminders": {
+    "status": "failed"
+  },
+  "short_url": "https://rzp.io/i/nxrHnLJ",
+  "status": "cancelled",
+  "updated_at": 1591097270,
+  "user_id": ""
+}
+```
+
+**amount** `integer`
+
+Amount to be paid using the Payment Link. Must be in the smallest unit of the currency. For example, if you want to receive a payment of , you must enter the value `30000`.
+
+**amount\_paid** `integer`
+
+Amount paid by the customer.
+
+**callback\_url** `string`
+
+If specified, adds a redirect URL to the Payment Link. Once the customer completes the payment, they are redirected to the specified URL.
+
+**callback\_method** `string`
+
+If `callback_url` parameter is passed, `callback_method` must be passed with the value `get`.
+
+**cancelled\_at** `integer`
+
+Timestamp, in Unix, at which the Payment Link was cancelled by you.
+
+**created\_at** `integer`
+
+Timestamp, in Unix, indicating when the Payment Link was created.
+
+**currency** `string`
+
+Defaults to USD.
+
+**customer** `json object`
+
+Customer details.
+
+**name** `string`
+
+The customer's name.
+
+**email** `string`
+
+The customer's email address.
+
+**contact** `string`
+
+The customer's phone number.
+
+**description** `string`
+
+A brief description of the Payment Link.
+
+**expire\_by** `integer`
+
+Timestamp, in Unix, when the Payment Link will expire. By default, a Payment Link will be valid for six months from the date of creation. Please note that the expire by date cannot exceed more than six months from the date of creation.
+
+**expired\_at** `integer`
+
+Timestamp, in Unix, at which the Payment Link expired.
+
+**first\_min\_partial\_amount** `integer`
+
+Minimum amount that must be paid by the customer as the first partial payment. For example, if an amount of  is to be received from the customer in two installments of #1 - , #2 - , then you can set this value as `500000`.
+
+**id** `string`
+
+Unique identifier of the Payment Link. For example, `plink_ERgihyaAAC0VNW`.
+
+**notes** `object`
+
+Set of key-value pairs that you can use to store additional information. You (Businesses) can enter a maximum of 15 key-value pairs, with each value having a maximum limit of 256 characters.
+
+**notify** `array`
+
+Defines who handles Payment Link notification.
+
+**sms** `boolean`
+
+Defines who handles the SMS notification.
+
+* `true`: Razorpay handles the notification.
+* `false`: Businesses handle the notification.
+
+**email** `boolean`
+
+Defines who handles the email notification.
+
+* `true`: Razorpay handles the notification.
+* `false`: Businesses handle the notification.
+
+**payments** `array`
+
+Payment details such as amount, payment id, Payment Link id and more are stored in this array. It is populated only after a payment is successfully captured by the customer. Only captured payments will be shown here. Until then, the value is `null`.
+
+**amount** `integer`
+
+The amount paid by the customer using the Payment Link.
+
+**created\_at** `integer`
+
+Timestamp, in Unix, indicating when the payment was made.
+
+**method** `string`
+
+The payment method used to make the payment. Possible values:
+
+* `card`
+* `ach`
+
+**payment\_id** `string`
+
+Unique identifier of the payment made against the Payment Link.
+
+**plink\_id** `string`
+
+Unique identifier of the Payment Link. For example, `plink_ERgihyaAAC0VNW`.
+
+**status** `string`
+
+The payment state. Possible value is `captured`.
+
+**updated\_at** `integer`
+
+Timestamp, in Unix, indicating when the payment was updated.
+
+**reference\_id** `string`
+
+Reference number tagged to a Payment Link. Must be a unique number for each Payment Link. The maximum character limit supported is 40.
+
+**short\_url** `string`
+
+The unique short URL generated for the Payment Link.
+
+**status** `string`
+
+Displays the current state of the Payment Link. Possible values:
+
+* `created`
+* `partially_paid`
+* `expired`
+* `cancelled`
+* `paid`
+
+**updated\_at** `integer`
+
+Timestamp, in Unix, indicating when the Payment Link was updated.
+
+**reminder\_enable** `boolean`
+
+Used to send [reminders](https://razorpay.com/docs/us/payments/payment-links/reminders.md) for the Payment Link. Possible values:
+
+* `true`: To send reminders.
+* `false`: To disable reminders.
+
+**user\_id** `string`
+
+A unique identifier for the user role through which the Payment Link was created. For example, `HD1JAKCCPGDfRx`.

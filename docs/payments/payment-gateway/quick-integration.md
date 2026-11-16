@@ -1,0 +1,79 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Quick Integration Prerequisites
+
+> Check the prerequisites before you integrate with Razorpay Quick Integration.
+
+Available in
+🇮🇳 India
+
+> [card] [Troubleshooting & FAQs](https://razorpay.com/docs/payments/payment-gateway/quick-integration/troubleshooting-faqs.md)
+>
+> Troubleshoot common error scenarios and find answers to frequently asked questions about Quick Integration.
+
+Quick integration is the fastest way to integrate Razorpay Checkout on your website and accept domestic and international payments from customers.
+
+## Quick Integration vs Standard Integration
+
+> [!NOTE]
+>
+> **Handy Tips**
+>
+> The Quick Integration (previously known as Automatic integration method) is simple and fast. However, in case you would like more control over your integration and checkout, we recommend the [Standard Integration](https://razorpay.com/docs/payments/payment-gateway/web-integration/standard.md).
+
+Given below is a comparison between the Standard and Quick integrations:
+
+| Particulars | Quick Integration | Standard Integration |
+| - | - | - |
+| **Pay Button** | The pay button is auto-created and cannot be customised. For example, you cannot change its font or background colour. | You can create and customise the pay button as per your business requirements. |
+| **Checkout Functions** | This is an HTML-based form action method, which does not support any JavaScript customisations. | This is a JavaScript method, allowing you to use additional functions to automatically open and close Checkout as required. |
+
+## Integration Steps
+
+**Before you proceed:**
+
+* Create a [Razorpay Account](https://dashboard.razorpay.com/signup)
+
+* Generate [API Keys](https://razorpay.com/docs/api/authentication.md#generate-api-keys) from the Dashboard. To go live with the integration and start accepting real payments, generate Live Mode API Keys and replace them in the integration.
+
+* Know about the [Razorpay Payment Flow](https://razorpay.com/docs/payments/payment-gateway/how-it-works.md).
+
+Follow these integration steps:
+
+> [card] [1. Build Integration](https://razorpay.com/docs/payments/payment-gateway/quick-integration/integration-steps.md#1-build-integration)
+>
+> Integrate Standard Checkout form on website.
+
+> [card] [2. Test Integration](https://razorpay.com/docs/payments/payment-gateway/quick-integration/integration-steps.md#2-test-integration)
+>
+> Test the integration by making a test payment.
+
+> [card] [3. Go-live Checklist](https://razorpay.com/docs/payments/payment-gateway/quick-integration/integration-steps.md#3-go-live-checklist)
+>
+> Check the go-live checklist.
+
+> [!NOTE]
+>
+> **Other Solutions**
+>
+> Looking to integrate Razorpay with your mobile app or at a server-level? Check the list of [integration types](https://razorpay.com/docs/payments/payment-gateway#integrate-payment-gateway-web-mobile-ecommerce-plugins).
+
+### Related Information
+
+* [Webhooks](https://razorpay.com/docs/webhooks) (Recommended)
+
+* [Error Codes](https://razorpay.com/docs/errors) (Recommended)
+
+* [How Payment Gateway Works](https://razorpay.com/docs/payments/payment-gateway/how-it-works.md)
+
+* [Payment States](https://razorpay.com/docs/payments/payments)
+
+* [Settlements](https://razorpay.com/docs/payments/settlements)
+
+* [Refunds](https://razorpay.com/docs/payments/refunds)
+
+* [Address Verification System](https://razorpay.com/docs/payments/international-payments/address-verification-system.md)
+
+* [Troubleshooting and FAQs](https://razorpay.com/docs/payments/payment-gateway/quick-integration/troubleshooting-faqs.md)

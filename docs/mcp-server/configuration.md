@@ -1,0 +1,38 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Razorpay MCP Server Configuration
+
+> Detailed configuration options and advanced setup for the Razorpay MCP Server.
+
+Available in
+🇮🇳 India
+
+The Razorpay MCP Server requires the following environment variables for configuration:
+
+| Variable | Type | Required | Description |
+| - | - | - | - |
+| `RAZORPAY_KEY_ID` | string | Yes | Your Razorpay API key ID |
+| `RAZORPAY_KEY_SECRET` | string | Yes | Your Razorpay API key secret |
+| `LOG_FILE` | string | No | Path to log file for server logs |
+| `TOOLSETS` | string | No | Comma-separated list of toolsets to enable (default: `all`) |
+| `READ_ONLY` | boolean | No | Run server in read-only mode (default: `false`) |
+
+## Command Line Flags
+
+When running the Local MCP Server binary directly, you can use the following command line flags:
+
+| Flag (Short) | Description |
+| - | - |
+| `--key` (`-k`) | Your Razorpay API key ID |
+| `--secret` (`-s`) | Your Razorpay API key secret |
+| `--log-file` (`-l`) | Path to log file |
+| `--toolsets` (`-t`) | Comma-separated list of toolsets to enable |
+| `--read-only` | Enable read-only mode |
+
+## Related Information
+
+* [Use Cases](https://razorpay.com/docs/mcp-server/use-cases.md)
+* [Tools Reference](https://razorpay.com/docs/mcp-server/tools-reference.md)
+* [FAQs](https://razorpay.com/docs/mcp-server/faqs.md)

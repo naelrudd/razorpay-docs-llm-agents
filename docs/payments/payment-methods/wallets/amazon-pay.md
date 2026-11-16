@@ -1,0 +1,88 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Amazon Pay - Standard Checkout
+
+> Offer Amazon Pay wallet as a payment method to your customers on Razorpay Standard Checkout.
+
+Available in
+🇮🇳 India
+
+Amazon Pay is a wallet-based payment method that allows customers with an Amazon account to make payments using their Amazon Pay balance. After Amazon Pay is enabled and integrated, it is listed on your website/app Checkout page as an option under the wallet payment method. Know more about [Amazon Pay](https://www.amazonpay.in/).
+
+> [accordion] On-Demand Feature - Raise a Request
+>
+> > [!NOTE]
+> >
+> > **Feature Request**
+> >
+> > This is an on-demand feature. Please raise a request with our [Support team](https://razorpay.com/support/#request) to get this feature activated on your Razorpay account.
+
+## Integrate Amazon Pay on Standard Checkout - Web, Mobile and iOS
+
+You can accept payments through wallets which are available by default. However, if you want to accept payments from external wallets, such as Amazon Pay, integration is required. Razorpay does not process payments for external wallets and gives you the control along with all the customer data entered in the Checkout form.
+
+> [!NOTE]
+>
+> **Handy Tips**
+>
+> The wallet payment option can be used for a purchase amount of up to ₹20000 (2000000 in paise).
+
+> [tab] Web
+>
+> To list external wallets on your web application, you need to first integrate our [Checkout form](https://razorpay.com/docs/payments/payment-gateway/web-integration/standard.md). After you integrate, follow the steps given below:
+>
+> 1. Add a key `external` to `checkout.js` options.
+> 2. Set `wallets` with wallet name array in `external` as the first parameter.
+>
+> ```javascript JavaScript theme={null}
+>   external: {
+>     wallets: ['amazonpay']
+>   }
+> ```
+>
+> 3. Set `handler` with a callback function in `external` as the second parameter.
+>
+> ```javascript JavaScript theme={null}
+>   external: {
+>     wallets: ['amazonpay'],
+>     handler: function(data) {
+>       'data'
+>       console.log(this, data)
+>     }
+>   }
+> ```
+>
+> The Amazon Pay is now shown in the wallets section. If the customer selects the external wallet and clicks **Submit**, our Standard Checkout library returns the control to you in the `external:handler:` method. You will get the selected wallet name as an argument. You will have to handle the payment flow for the wallet from hereon.
+
+> [tab] Android
+>
+> To integrate Amazon Pay wallet with the Standard Checkout on your Android app:
+>
+> 1. Download the following SDKs and add the `aar` files to the application library.
+>    * Download [Amazon-SDK](https://rzp-1415-prod-mobile.s3.amazonaws.com/android/googlepay-sdk/tez-client-api-0.9.4.aar).
+>
+>    * Download [Razorpay-Amazon Pay SDK](https://rzp-1415-prod-mobile.s3.amazonaws.com/android/googlepay-sdk/tez-client-api-0.9.4.aar).
+>
+> > [!NOTE]
+> >
+> > **Handy Tips**
+> >
+> > The Razorpay-Amazon Pay SDK acts as a wrapper over the native Amazon-SDK.
+>
+> 2. Add the following lines of code to the `build.gradle` file of your application:
+>
+> ```java build.gradle theme={null}
+>     dependencies {
+>       implementation(name: 'razorpay-amazonpay-1.3.0', ext: 'aar')
+>       implementation(name:'PayWithAmazon', ext:'aar')
+>       implementation 'com.android.support:customtabs:26.1.0'
+>     }
+> ```
+>
+> This will add the dependencies for the SDK and display the Amazon Pay wallet on your Checkout form.
+
+> [tab] iOS
+>
+> Amazon Pay as a payment method is available by default on iOS and no additional integration is needed.
