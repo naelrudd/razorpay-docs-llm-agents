@@ -1,6 +1,6 @@
 # Index — Razorpay
 Source: https://razorpay.com/docs/llms.txt
-Pages: 4565
+Pages: 5055
 
 | Path | First heading |
 |---|---|
@@ -49,6 +49,21 @@ Pages: 4565
 | [docs/api/partners/account-onboarding/fetch.md](https://razorpay.com/docs/api/partners/account-onboarding/fetch.md) | Fetch an Account |
 | [docs/api/partners/account-onboarding/update.md](https://razorpay.com/docs/api/partners/account-onboarding/update.md) | Update an Account |
 | [docs/api/partners/account-onboarding.md](https://razorpay.com/docs/api/partners/account-onboarding.md) | Account |
+| [docs/api/partners/accounts/business-categories.md](https://razorpay.com/docs/api/partners/accounts/business-categories.md) | Business Categories |
+| [docs/api/partners/accounts/business-model-questions.md](https://razorpay.com/docs/api/partners/accounts/business-model-questions.md) | Business Model Questions |
+| [docs/api/partners/accounts/create.md](https://razorpay.com/docs/api/partners/accounts/create.md) | Create an Account |
+| [docs/api/partners/accounts/delete-document.md](https://razorpay.com/docs/api/partners/accounts/delete-document.md) | Delete a Document |
+| [docs/api/partners/accounts/document-entity.md](https://razorpay.com/docs/api/partners/accounts/document-entity.md) | Document Entity |
+| [docs/api/partners/accounts/entity.md](https://razorpay.com/docs/api/partners/accounts/entity.md) | Account Entity |
+| [docs/api/partners/accounts/errors.md](https://razorpay.com/docs/api/partners/accounts/errors.md) | Errors |
+| [docs/api/partners/accounts/fetch-all-documents.md](https://razorpay.com/docs/api/partners/accounts/fetch-all-documents.md) | Fetch All Documents |
+| [docs/api/partners/accounts/fetch-document.md](https://razorpay.com/docs/api/partners/accounts/fetch-document.md) | Fetch One Document by ID |
+| [docs/api/partners/accounts/fetch.md](https://razorpay.com/docs/api/partners/accounts/fetch.md) | Fetch Accounts |
+| [docs/api/partners/accounts/requirement-entity.md](https://razorpay.com/docs/api/partners/accounts/requirement-entity.md) | Requirement Entity |
+| [docs/api/partners/accounts/run-action.md](https://razorpay.com/docs/api/partners/accounts/run-action.md) | Run an Action |
+| [docs/api/partners/accounts/update.md](https://razorpay.com/docs/api/partners/accounts/update.md) | Update an Account |
+| [docs/api/partners/accounts/upload-document.md](https://razorpay.com/docs/api/partners/accounts/upload-document.md) | Upload a Document |
+| [docs/api/partners/accounts.md](https://razorpay.com/docs/api/partners/accounts.md) | Accounts API |
 | [docs/api/partners/product-configuration/entity.md](https://razorpay.com/docs/api/partners/product-configuration/entity.md) | Product Configuration Entity |
 | [docs/api/partners/product-configuration/fetch.md](https://razorpay.com/docs/api/partners/product-configuration/fetch.md) | Fetch a Product Configuration |
 | [docs/api/partners/product-configuration/request.md](https://razorpay.com/docs/api/partners/product-configuration/request.md) | Request a Product Configuration |
@@ -2636,6 +2651,479 @@ Pages: 4565
 | [docs/mcp-server/tools-reference.md](https://razorpay.com/docs/mcp-server/tools-reference.md) | Razorpay MCP Tools Reference |
 | [docs/mcp-server/use-cases.md](https://razorpay.com/docs/mcp-server/use-cases.md) | Razorpay MCP Server Use Cases |
 | [docs/mcp-server.md](https://razorpay.com/docs/mcp-server.md) | About Razorpay MCP Server |
+| [docs/my/api/authentication.md](https://razorpay.com/docs/my/api/authentication.md) | API Authentication |
+| [docs/my/api/best-practices.md](https://razorpay.com/docs/my/api/best-practices.md) | Best Practices |
+| [docs/my/api/customers/create.md](https://razorpay.com/docs/my/api/customers/create.md) | Create a Customer |
+| [docs/my/api/customers/edit.md](https://razorpay.com/docs/my/api/customers/edit.md) | Edit Customer Details |
+| [docs/my/api/customers/entity.md](https://razorpay.com/docs/my/api/customers/entity.md) | Customers Entity |
+| [docs/my/api/customers/fetch-all.md](https://razorpay.com/docs/my/api/customers/fetch-all.md) | Fetch All Customers |
+| [docs/my/api/customers.md](https://razorpay.com/docs/my/api/customers.md) | Customers |
+| [docs/my/api/glossary.md](https://razorpay.com/docs/my/api/glossary.md) | Glossary |
+| [docs/my/api/install-cli.md](https://razorpay.com/docs/my/api/install-cli.md) | Install the Razorpay Curlec CLI |
+| [docs/my/api/orders/create.md](https://razorpay.com/docs/my/api/orders/create.md) | Create an Order |
+| [docs/my/api/orders/entity.md](https://razorpay.com/docs/my/api/orders/entity.md) | Orders Entity |
+| [docs/my/api/orders/fetch-all-expanded-card-payments.md](https://razorpay.com/docs/my/api/orders/fetch-all-expanded-card-payments.md) | Fetch All Orders (With Expand Card Payments) |
+| [docs/my/api/orders/fetch-all-expanded-payments.md](https://razorpay.com/docs/my/api/orders/fetch-all-expanded-payments.md) | Fetch All Orders (With Expanded Payments) |
+| [docs/my/api/orders/fetch-all.md](https://razorpay.com/docs/my/api/orders/fetch-all.md) | Fetch All Orders |
+| [docs/my/api/orders/fetch-payments.md](https://razorpay.com/docs/my/api/orders/fetch-payments.md) | Fetch Payments for an Order |
+| [docs/my/api/orders/fetch-with-id.md](https://razorpay.com/docs/my/api/orders/fetch-with-id.md) | Fetch an Order With ID |
+| [docs/my/api/payments/capture.md](https://razorpay.com/docs/my/api/payments/capture.md) | Capture a Payment |
+| [docs/my/api/payments/entity.md](https://razorpay.com/docs/my/api/payments/entity.md) | Payments Entity |
+| [docs/my/api/payments/fetch-all-payments-with-expanded-card-details.md](https://razorpay.com/docs/my/api/payments/fetch-all-payments-with-expanded-card-details.md) | Fetch All Payments (With Expanded Card Details) |
+| [docs/my/api/payments/fetch-all-payments-with-expanded-emi-details.md](https://razorpay.com/docs/my/api/payments/fetch-all-payments-with-expanded-emi-details.md) | Fetch All Payments (With Expanded EMI Details) |
+| [docs/my/api/payments/fetch-all-payments.md](https://razorpay.com/docs/my/api/payments/fetch-all-payments.md) | Fetch All Payments |
+| [docs/my/api/payments/fetch-card-details-payment.md](https://razorpay.com/docs/my/api/payments/fetch-card-details-payment.md) | Fetch Card Details of a Payment |
+| [docs/my/api/payments/fetch-payment-expanded-card.md](https://razorpay.com/docs/my/api/payments/fetch-payment-expanded-card.md) | Fetch a Payment (With Expanded Card Details) |
+| [docs/my/api/payments/fetch-payments-orders.md](https://razorpay.com/docs/my/api/payments/fetch-payments-orders.md) | Fetch Payments Based on Orders |
+| [docs/my/api/payments/fetch-with-id.md](https://razorpay.com/docs/my/api/payments/fetch-with-id.md) | Fetch a Payment With ID |
+| [docs/my/api/payments/invoices/cancel.md](https://razorpay.com/docs/my/api/payments/invoices/cancel.md) | Cancel an Invoice |
+| [docs/my/api/payments/invoices/create-item.md](https://razorpay.com/docs/my/api/payments/invoices/create-item.md) | Create an Item |
+| [docs/my/api/payments/invoices/create-with-customer-id.md](https://razorpay.com/docs/my/api/payments/invoices/create-with-customer-id.md) | Create an Invoice With Customer ID |
+| [docs/my/api/payments/invoices/create-with-details.md](https://razorpay.com/docs/my/api/payments/invoices/create-with-details.md) | Create an Invoice With Customer Details |
+| [docs/my/api/payments/invoices/delete.md](https://razorpay.com/docs/my/api/payments/invoices/delete.md) | Delete an Invoice |
+| [docs/my/api/payments/invoices/entity.md](https://razorpay.com/docs/my/api/payments/invoices/entity.md) | Invoices Entity |
+| [docs/my/api/payments/invoices/fetch-all-items.md](https://razorpay.com/docs/my/api/payments/invoices/fetch-all-items.md) | Fetch All Items |
+| [docs/my/api/payments/invoices/fetch-all.md](https://razorpay.com/docs/my/api/payments/invoices/fetch-all.md) | Fetch All Invoices |
+| [docs/my/api/payments/invoices/fetch-with-id-item.md](https://razorpay.com/docs/my/api/payments/invoices/fetch-with-id-item.md) | Fetch Item With ID |
+| [docs/my/api/payments/invoices/fetch-with-id.md](https://razorpay.com/docs/my/api/payments/invoices/fetch-with-id.md) | Fetch an Invoice With ID |
+| [docs/my/api/payments/invoices/issue.md](https://razorpay.com/docs/my/api/payments/invoices/issue.md) | Issue an Invoice |
+| [docs/my/api/payments/invoices/item-entity.md](https://razorpay.com/docs/my/api/payments/invoices/item-entity.md) | Items Entity |
+| [docs/my/api/payments/invoices/resend.md](https://razorpay.com/docs/my/api/payments/invoices/resend.md) | Send Notifications |
+| [docs/my/api/payments/invoices/update-item.md](https://razorpay.com/docs/my/api/payments/invoices/update-item.md) | Update an Item |
+| [docs/my/api/payments/invoices/update.md](https://razorpay.com/docs/my/api/payments/invoices/update.md) | Update an Invoice |
+| [docs/my/api/payments/invoices.md](https://razorpay.com/docs/my/api/payments/invoices.md) | Invoices |
+| [docs/my/api/payments/payment-links/cancel-standard.md](https://razorpay.com/docs/my/api/payments/payment-links/cancel-standard.md) | Cancel a Standard Payment Link |
+| [docs/my/api/payments/payment-links/change-business-name.md](https://razorpay.com/docs/my/api/payments/payment-links/change-business-name.md) | Change Business Name |
+| [docs/my/api/payments/payment-links/checkout-theme.md](https://razorpay.com/docs/my/api/payments/payment-links/checkout-theme.md) | Implement Thematic Changes in Payment Links Checkout Section |
+| [docs/my/api/payments/payment-links/create-standard.md](https://razorpay.com/docs/my/api/payments/payment-links/create-standard.md) | Create a Standard Payment Link |
+| [docs/my/api/payments/payment-links/customise-options-config.md](https://razorpay.com/docs/my/api/payments/payment-links/customise-options-config.md) | Customise Payment Methods - Options and Config Parameters |
+| [docs/my/api/payments/payment-links/customise-payment-methods.md](https://razorpay.com/docs/my/api/payments/payment-links/customise-payment-methods.md) | Customise Payment Methods - Options and Method Parameters |
+| [docs/my/api/payments/payment-links/entity.md](https://razorpay.com/docs/my/api/payments/payment-links/entity.md) | Payment Links Entity |
+| [docs/my/api/payments/payment-links/fetch-all-standard.md](https://razorpay.com/docs/my/api/payments/payment-links/fetch-all-standard.md) | Fetch All Standard Payment Links |
+| [docs/my/api/payments/payment-links/fetch-id-standard.md](https://razorpay.com/docs/my/api/payments/payment-links/fetch-id-standard.md) | Fetch Standard Payment Links With ID |
+| [docs/my/api/payments/payment-links/rename-checkout-labels.md](https://razorpay.com/docs/my/api/payments/payment-links/rename-checkout-labels.md) | Rename Labels in Checkout Section |
+| [docs/my/api/payments/payment-links/rename-payment-details-labels.md](https://razorpay.com/docs/my/api/payments/payment-links/rename-payment-details-labels.md) | Rename Labels in Payment Details Section |
+| [docs/my/api/payments/payment-links/resend.md](https://razorpay.com/docs/my/api/payments/payment-links/resend.md) | Send or Resend Notifications |
+| [docs/my/api/payments/payment-links/update-standard.md](https://razorpay.com/docs/my/api/payments/payment-links/update-standard.md) | Update Standard Payment Link |
+| [docs/my/api/payments/payment-links.md](https://razorpay.com/docs/my/api/payments/payment-links.md) | Payment Links |
+| [docs/my/api/payments/route/create-linked-account.md](https://razorpay.com/docs/my/api/payments/route/create-linked-account.md) | Create a Linked Account |
+| [docs/my/api/payments/route/create-stakeholder.md](https://razorpay.com/docs/my/api/payments/route/create-stakeholder.md) | Create a Stakeholder Account |
+| [docs/my/api/payments/route/create-transfers-orders.md](https://razorpay.com/docs/my/api/payments/route/create-transfers-orders.md) | Create Transfers From Orders |
+| [docs/my/api/payments/route/create-transfers-payments.md](https://razorpay.com/docs/my/api/payments/route/create-transfers-payments.md) | Create Transfers From Payments |
+| [docs/my/api/payments/route/direct-transfers-idempotent-request.md](https://razorpay.com/docs/my/api/payments/route/direct-transfers-idempotent-request.md) | Create a Direct Transfer (Idempotent Request) |
+| [docs/my/api/payments/route/direct-transfers.md](https://razorpay.com/docs/my/api/payments/route/direct-transfers.md) | Create a Direct Transfer |
+| [docs/my/api/payments/route/fetch-a-transfer.md](https://razorpay.com/docs/my/api/payments/route/fetch-a-transfer.md) | Fetch a Transfer With ID |
+| [docs/my/api/payments/route/fetch-payments-linked-account.md](https://razorpay.com/docs/my/api/payments/route/fetch-payments-linked-account.md) | Fetch Payments of a Linked Account |
+| [docs/my/api/payments/route/fetch-product-config.md](https://razorpay.com/docs/my/api/payments/route/fetch-product-config.md) | Fetch a Product Configuration |
+| [docs/my/api/payments/route/fetch-reversals.md](https://razorpay.com/docs/my/api/payments/route/fetch-reversals.md) | Fetch Reversals for a Transfer |
+| [docs/my/api/payments/route/fetch-settlement-details.md](https://razorpay.com/docs/my/api/payments/route/fetch-settlement-details.md) | Fetch Settlement Details |
+| [docs/my/api/payments/route/fetch-transfer-order.md](https://razorpay.com/docs/my/api/payments/route/fetch-transfer-order.md) | Fetch Transfer for an Order |
+| [docs/my/api/payments/route/fetch-transfers-for-a-settlement.md](https://razorpay.com/docs/my/api/payments/route/fetch-transfers-for-a-settlement.md) | Fetch Transfers for a Settlement |
+| [docs/my/api/payments/route/fetch-transfers-payment.md](https://razorpay.com/docs/my/api/payments/route/fetch-transfers-payment.md) | Fetch Transfers for a Payment |
+| [docs/my/api/payments/route/fetch-with-id.md](https://razorpay.com/docs/my/api/payments/route/fetch-with-id.md) | Fetch a Linked Account With ID |
+| [docs/my/api/payments/route/linked-account-entity.md](https://razorpay.com/docs/my/api/payments/route/linked-account-entity.md) | Linked Account Entity |
+| [docs/my/api/payments/route/modify-settlement-hold.md](https://razorpay.com/docs/my/api/payments/route/modify-settlement-hold.md) | Modify Settlement Hold for Transfers |
+| [docs/my/api/payments/route/product-configuration-entity.md](https://razorpay.com/docs/my/api/payments/route/product-configuration-entity.md) | Product Configuration Entity |
+| [docs/my/api/payments/route/refund-payments-and-reverse-transfer.md](https://razorpay.com/docs/my/api/payments/route/refund-payments-and-reverse-transfer.md) | Refund Payments and Reverse Transfer from a Linked Account |
+| [docs/my/api/payments/route/request-product-config.md](https://razorpay.com/docs/my/api/payments/route/request-product-config.md) | Request a Product Configuration |
+| [docs/my/api/payments/route/reverse-a-transfer.md](https://razorpay.com/docs/my/api/payments/route/reverse-a-transfer.md) | Reverse a Transfer |
+| [docs/my/api/payments/route/stakeholder-entity.md](https://razorpay.com/docs/my/api/payments/route/stakeholder-entity.md) | Stakeholder Entity |
+| [docs/my/api/payments/route/transfers-entity.md](https://razorpay.com/docs/my/api/payments/route/transfers-entity.md) | Transfers Entity |
+| [docs/my/api/payments/route/update-linked-accounts.md](https://razorpay.com/docs/my/api/payments/route/update-linked-accounts.md) | Update a Linked Account |
+| [docs/my/api/payments/route/update-product-config.md](https://razorpay.com/docs/my/api/payments/route/update-product-config.md) | Update a Product Configuration |
+| [docs/my/api/payments/route/update-stakeholder.md](https://razorpay.com/docs/my/api/payments/route/update-stakeholder.md) | Update a Stakeholder Account |
+| [docs/my/api/payments/route.md](https://razorpay.com/docs/my/api/payments/route.md) | Route |
+| [docs/my/api/payments/subscriptions/cancel-subscription.md](https://razorpay.com/docs/my/api/payments/subscriptions/cancel-subscription.md) | Cancel a Subscription |
+| [docs/my/api/payments/subscriptions/cancel-update.md](https://razorpay.com/docs/my/api/payments/subscriptions/cancel-update.md) | Cancel an Update |
+| [docs/my/api/payments/subscriptions/create-plan.md](https://razorpay.com/docs/my/api/payments/subscriptions/create-plan.md) | Create a Plan |
+| [docs/my/api/payments/subscriptions/create-subscription-link.md](https://razorpay.com/docs/my/api/payments/subscriptions/create-subscription-link.md) | Create a Subscription Link |
+| [docs/my/api/payments/subscriptions/create-subscription.md](https://razorpay.com/docs/my/api/payments/subscriptions/create-subscription.md) | Create a Subscription |
+| [docs/my/api/payments/subscriptions/entity.md](https://razorpay.com/docs/my/api/payments/subscriptions/entity.md) | Subscriptions Entity |
+| [docs/my/api/payments/subscriptions/fetch-a-plan.md](https://razorpay.com/docs/my/api/payments/subscriptions/fetch-a-plan.md) | Fetch a Plan With ID |
+| [docs/my/api/payments/subscriptions/fetch-all-plans.md](https://razorpay.com/docs/my/api/payments/subscriptions/fetch-all-plans.md) | Fetch All Plans |
+| [docs/my/api/payments/subscriptions/fetch-invoices.md](https://razorpay.com/docs/my/api/payments/subscriptions/fetch-invoices.md) | Fetch All Invoices of a Subscription |
+| [docs/my/api/payments/subscriptions/fetch-pending-update-details.md](https://razorpay.com/docs/my/api/payments/subscriptions/fetch-pending-update-details.md) | Fetch Details of a Pending Update |
+| [docs/my/api/payments/subscriptions/fetch-subscription-id.md](https://razorpay.com/docs/my/api/payments/subscriptions/fetch-subscription-id.md) | Fetch a Subscription With ID |
+| [docs/my/api/payments/subscriptions/fetch-subscriptions.md](https://razorpay.com/docs/my/api/payments/subscriptions/fetch-subscriptions.md) | Fetch All Subscriptions |
+| [docs/my/api/payments/subscriptions/pause-subscription.md](https://razorpay.com/docs/my/api/payments/subscriptions/pause-subscription.md) | Pause a Subscription |
+| [docs/my/api/payments/subscriptions/plans-entity.md](https://razorpay.com/docs/my/api/payments/subscriptions/plans-entity.md) | Plans Entity |
+| [docs/my/api/payments/subscriptions/resume-subscription.md](https://razorpay.com/docs/my/api/payments/subscriptions/resume-subscription.md) | Resume a Subscription |
+| [docs/my/api/payments/subscriptions/update-subscription.md](https://razorpay.com/docs/my/api/payments/subscriptions/update-subscription.md) | Update a Subscription |
+| [docs/my/api/payments/subscriptions.md](https://razorpay.com/docs/my/api/payments/subscriptions.md) | Subscriptions |
+| [docs/my/api/payments.md](https://razorpay.com/docs/my/api/payments.md) | Payments |
+| [docs/my/api/refunds/create-normal.md](https://razorpay.com/docs/my/api/refunds/create-normal.md) | Create a Normal Refund |
+| [docs/my/api/refunds/entity.md](https://razorpay.com/docs/my/api/refunds/entity.md) | Refunds Entity |
+| [docs/my/api/refunds/fetch-all.md](https://razorpay.com/docs/my/api/refunds/fetch-all.md) | Fetch All Refunds |
+| [docs/my/api/refunds/fetch-multiple-refund-payment.md](https://razorpay.com/docs/my/api/refunds/fetch-multiple-refund-payment.md) | Fetch Multiple Refunds for a Payment |
+| [docs/my/api/refunds/fetch-specific-refund-payment.md](https://razorpay.com/docs/my/api/refunds/fetch-specific-refund-payment.md) | Fetch a Specific Refund for a Payment |
+| [docs/my/api/refunds/fetch-with-id.md](https://razorpay.com/docs/my/api/refunds/fetch-with-id.md) | Fetch Refund With ID |
+| [docs/my/api/refunds/normal-refunds-idempotent.md](https://razorpay.com/docs/my/api/refunds/normal-refunds-idempotent.md) | Create a Normal Refund (Idempotent Request) |
+| [docs/my/api/refunds.md](https://razorpay.com/docs/my/api/refunds.md) | Refunds |
+| [docs/my/api/sandbox-setup.md](https://razorpay.com/docs/my/api/sandbox-setup.md) | API Sandbox Setup |
+| [docs/my/api/settlements/entity.md](https://razorpay.com/docs/my/api/settlements/entity.md) | Settlements Entity |
+| [docs/my/api/settlements/fetch-all.md](https://razorpay.com/docs/my/api/settlements/fetch-all.md) | Fetch All Settlements |
+| [docs/my/api/settlements/fetch-with-id.md](https://razorpay.com/docs/my/api/settlements/fetch-with-id.md) | Fetch Settlements With ID |
+| [docs/my/api/settlements.md](https://razorpay.com/docs/my/api/settlements.md) | Settlements |
+| [docs/my/api/understand.md](https://razorpay.com/docs/my/api/understand.md) | Understand Razorpay Curlec APIs |
+| [docs/my/api.md](https://razorpay.com/docs/my/api.md) | API Reference Guide |
+| [docs/my/cli/install-cli.md](https://razorpay.com/docs/my/cli/install-cli.md) | Install the Razorpay Curlec CLI |
+| [docs/my/cli.md](https://razorpay.com/docs/my/cli.md) | About CLI |
+| [docs/my/developer-tools.md](https://razorpay.com/docs/my/developer-tools.md) | Developer Tools |
+| [docs/my/errors/common.md](https://razorpay.com/docs/my/errors/common.md) | Common Errors |
+| [docs/my/errors/payments/cards.md](https://razorpay.com/docs/my/errors/payments/cards.md) | Cards Error Codes |
+| [docs/my/errors/payments/list.md](https://razorpay.com/docs/my/errors/payments/list.md) | List of Errors |
+| [docs/my/errors/payments/payment-methods-error-parameters.md](https://razorpay.com/docs/my/errors/payments/payment-methods-error-parameters.md) | Payment Method Error Parameters |
+| [docs/my/errors.md](https://razorpay.com/docs/my/errors.md) | About Errors |
+| [docs/my/home.md](https://razorpay.com/docs/my/home.md) | Documentation |
+| [docs/my/payments/business-types-kyc-documents.md](https://razorpay.com/docs/my/payments/business-types-kyc-documents.md) | KYC Documents for Companies and Businesses |
+| [docs/my/payments/customers/customer-refunds.md](https://razorpay.com/docs/my/payments/customers/customer-refunds.md) | Customer Refunds |
+| [docs/my/payments/customers.md](https://razorpay.com/docs/my/payments/customers.md) | About Customers |
+| [docs/my/payments/dashboard/account-settings/account-details.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/account-details.md) | Account Details |
+| [docs/my/payments/dashboard/account-settings/activation-details.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/activation-details.md) | Account Activation Details |
+| [docs/my/payments/dashboard/account-settings/api-keys.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/api-keys.md) | API Keys |
+| [docs/my/payments/dashboard/account-settings/balances.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/balances.md) | Balances |
+| [docs/my/payments/dashboard/account-settings/bank-account-details.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/bank-account-details.md) | Bank Account Details |
+| [docs/my/payments/dashboard/account-settings/branding.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/branding.md) | Branding |
+| [docs/my/payments/dashboard/account-settings/business-details.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/business-details.md) | Business Details |
+| [docs/my/payments/dashboard/account-settings/business-website-details.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/business-website-details.md) | Business Website Details |
+| [docs/my/payments/dashboard/account-settings/capture-refund.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/capture-refund.md) | Capture and Refund Settings |
+| [docs/my/payments/dashboard/account-settings/checkout-features.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/checkout-features.md) | Checkout Features |
+| [docs/my/payments/dashboard/account-settings/checkout-styling.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/checkout-styling.md) | Checkout Styling |
+| [docs/my/payments/dashboard/account-settings/customer-support-details.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/customer-support-details.md) | Customer Support Details |
+| [docs/my/payments/dashboard/account-settings/email-sms-whatsapp.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/email-sms-whatsapp.md) | Email, SMS and WhatsApp Notifications |
+| [docs/my/payments/dashboard/account-settings/manage-team.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/manage-team.md) | Manage Team |
+| [docs/my/payments/dashboard/account-settings/payment-methods.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/payment-methods.md) | Payment Methods |
+| [docs/my/payments/dashboard/account-settings/settlement-details.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/settlement-details.md) | Settlement Details |
+| [docs/my/payments/dashboard/account-settings/support-tickets.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/support-tickets.md) | Your Support Tickets |
+| [docs/my/payments/dashboard/account-settings/transaction-limits.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/transaction-limits.md) | Transaction Limits |
+| [docs/my/payments/dashboard/account-settings/webhooks.md](https://razorpay.com/docs/my/payments/dashboard/account-settings/webhooks.md) | Webhooks |
+| [docs/my/payments/dashboard/account-settings.md](https://razorpay.com/docs/my/payments/dashboard/account-settings.md) | About Account & Settings |
+| [docs/my/payments/dashboard/faqs.md](https://razorpay.com/docs/my/payments/dashboard/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/dashboard/reports/list-of-reports.md](https://razorpay.com/docs/my/payments/dashboard/reports/list-of-reports.md) | List of Standard Reports |
+| [docs/my/payments/dashboard/reports.md](https://razorpay.com/docs/my/payments/dashboard/reports.md) | About Reports |
+| [docs/my/payments/dashboard/support.md](https://razorpay.com/docs/my/payments/dashboard/support.md) | Support |
+| [docs/my/payments/dashboard/test-live-modes.md](https://razorpay.com/docs/my/payments/dashboard/test-live-modes.md) | Test and Live Modes |
+| [docs/my/payments/dashboard.md](https://razorpay.com/docs/my/payments/dashboard.md) | About Dashboard |
+| [docs/my/payments/faqs.md](https://razorpay.com/docs/my/payments/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/glossary.md](https://razorpay.com/docs/my/payments/glossary.md) | Glossary |
+| [docs/my/payments/international-payments/accept-payments-from-international-customers.md](https://razorpay.com/docs/my/payments/international-payments/accept-payments-from-international-customers.md) | Accept Payments from International Customers |
+| [docs/my/payments/international-payments/billing-api.md](https://razorpay.com/docs/my/payments/international-payments/billing-api.md) | India Billing API - Integration Guide for Stripe Merchants |
+| [docs/my/payments/international-payments/faqs.md](https://razorpay.com/docs/my/payments/international-payments/faqs.md) | International Payments | FAQs |
+| [docs/my/payments/international-payments/glossary.md](https://razorpay.com/docs/my/payments/international-payments/glossary.md) | Glossary |
+| [docs/my/payments/international-payments/international-debit-credit-cards.md](https://razorpay.com/docs/my/payments/international-payments/international-debit-credit-cards.md) | International Debit and Credit Cards |
+| [docs/my/payments/international-payments.md](https://razorpay.com/docs/my/payments/international-payments.md) | About International Payments |
+| [docs/my/payments/invoices/apis.md](https://razorpay.com/docs/my/payments/invoices/apis.md) | Invoice APIs |
+| [docs/my/payments/invoices/cancel.md](https://razorpay.com/docs/my/payments/invoices/cancel.md) | Cancel an Invoice |
+| [docs/my/payments/invoices/create.md](https://razorpay.com/docs/my/payments/invoices/create.md) | Create an Invoice |
+| [docs/my/payments/invoices/delete.md](https://razorpay.com/docs/my/payments/invoices/delete.md) | Delete an Invoice |
+| [docs/my/payments/invoices/download-print.md](https://razorpay.com/docs/my/payments/invoices/download-print.md) | Download and Print an Invoice |
+| [docs/my/payments/invoices/duplicate.md](https://razorpay.com/docs/my/payments/invoices/duplicate.md) | Duplicate an Invoice |
+| [docs/my/payments/invoices/faqs.md](https://razorpay.com/docs/my/payments/invoices/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/invoices/glossary.md](https://razorpay.com/docs/my/payments/invoices/glossary.md) | Glossary |
+| [docs/my/payments/invoices/how-it-works.md](https://razorpay.com/docs/my/payments/invoices/how-it-works.md) | How Invoices Work |
+| [docs/my/payments/invoices/issue.md](https://razorpay.com/docs/my/payments/invoices/issue.md) | Issue an Invoice |
+| [docs/my/payments/invoices/items/dashboard.md](https://razorpay.com/docs/my/payments/invoices/items/dashboard.md) | Items Dashboard |
+| [docs/my/payments/invoices/items.md](https://razorpay.com/docs/my/payments/invoices/items.md) | About Items |
+| [docs/my/payments/invoices/resend.md](https://razorpay.com/docs/my/payments/invoices/resend.md) | Resend an Invoice |
+| [docs/my/payments/invoices/search.md](https://razorpay.com/docs/my/payments/invoices/search.md) | Search an Invoice |
+| [docs/my/payments/invoices/states.md](https://razorpay.com/docs/my/payments/invoices/states.md) | Invoice States |
+| [docs/my/payments/invoices/subscribe-to-webhooks.md](https://razorpay.com/docs/my/payments/invoices/subscribe-to-webhooks.md) | Subscribe to Webhooks |
+| [docs/my/payments/invoices/update.md](https://razorpay.com/docs/my/payments/invoices/update.md) | Update an Invoice |
+| [docs/my/payments/invoices/use-cases.md](https://razorpay.com/docs/my/payments/invoices/use-cases.md) | Invoices Use Cases |
+| [docs/my/payments/invoices.md](https://razorpay.com/docs/my/payments/invoices.md) | About Invoices |
+| [docs/my/payments/mobile-app/accept-payments/payment-gateway.md](https://razorpay.com/docs/my/payments/mobile-app/accept-payments/payment-gateway.md) | Payment Gateway |
+| [docs/my/payments/mobile-app/accept-payments/payment-links.md](https://razorpay.com/docs/my/payments/mobile-app/accept-payments/payment-links.md) | Create and Send Payment Links |
+| [docs/my/payments/mobile-app/accept-payments/payment-pages.md](https://razorpay.com/docs/my/payments/mobile-app/accept-payments/payment-pages.md) | Payment Pages on Mobile App |
+| [docs/my/payments/mobile-app/accept-payments/webstore.md](https://razorpay.com/docs/my/payments/mobile-app/accept-payments/webstore.md) | Webstore on Mobile App |
+| [docs/my/payments/mobile-app/faqs.md](https://razorpay.com/docs/my/payments/mobile-app/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/mobile-app/get-started.md](https://razorpay.com/docs/my/payments/mobile-app/get-started.md) | Get Started |
+| [docs/my/payments/mobile-app/glossary.md](https://razorpay.com/docs/my/payments/mobile-app/glossary.md) | Glossary |
+| [docs/my/payments/mobile-app/roles-and-permissions.md](https://razorpay.com/docs/my/payments/mobile-app/roles-and-permissions.md) | Roles and Permissions |
+| [docs/my/payments/mobile-app/settings.md](https://razorpay.com/docs/my/payments/mobile-app/settings.md) | Settings |
+| [docs/my/payments/mobile-app/track-manage/issue-refunds.md](https://razorpay.com/docs/my/payments/mobile-app/track-manage/issue-refunds.md) | Issue Refunds |
+| [docs/my/payments/mobile-app/track-manage/view-settlements.md](https://razorpay.com/docs/my/payments/mobile-app/track-manage/view-settlements.md) | View Settlements |
+| [docs/my/payments/mobile-app/track-manage.md](https://razorpay.com/docs/my/payments/mobile-app/track-manage.md) | Track Payments |
+| [docs/my/payments/mobile-app.md](https://razorpay.com/docs/my/payments/mobile-app.md) | About Razorpay Curlec Payments Mobile App |
+| [docs/my/payments/orders/apis.md](https://razorpay.com/docs/my/payments/orders/apis.md) | Orders APIs |
+| [docs/my/payments/orders/dashboard.md](https://razorpay.com/docs/my/payments/orders/dashboard.md) | Orders - Dashboard Actions |
+| [docs/my/payments/orders/faqs.md](https://razorpay.com/docs/my/payments/orders/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/orders.md](https://razorpay.com/docs/my/payments/orders.md) | About Orders |
+| [docs/my/payments/payment-button/add-fb-pixel.md](https://razorpay.com/docs/my/payments/payment-button/add-fb-pixel.md) | Add Facebook Pixel on Payment Success Page |
+| [docs/my/payments/payment-button/buy-now.md](https://razorpay.com/docs/my/payments/payment-button/buy-now.md) | Buy Now Button |
+| [docs/my/payments/payment-button/custom.md](https://razorpay.com/docs/my/payments/payment-button/custom.md) | Custom Button |
+| [docs/my/payments/payment-button/donations.md](https://razorpay.com/docs/my/payments/payment-button/donations.md) | Donations Button |
+| [docs/my/payments/payment-button/faqs.md](https://razorpay.com/docs/my/payments/payment-button/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/payment-button/glossary.md](https://razorpay.com/docs/my/payments/payment-button/glossary.md) | Glossary |
+| [docs/my/payments/payment-button/how-it-works.md](https://razorpay.com/docs/my/payments/payment-button/how-it-works.md) | How Payment Button Works |
+| [docs/my/payments/payment-button/manage/prefill-amount-fields.md](https://razorpay.com/docs/my/payments/payment-button/manage/prefill-amount-fields.md) | Prefill Amount Fields in Payment Button |
+| [docs/my/payments/payment-button/manage.md](https://razorpay.com/docs/my/payments/payment-button/manage.md) | Manage Payment Buttons |
+| [docs/my/payments/payment-button/quick-pay.md](https://razorpay.com/docs/my/payments/payment-button/quick-pay.md) | Quick Pay Button |
+| [docs/my/payments/payment-button/receipt.md](https://razorpay.com/docs/my/payments/payment-button/receipt.md) | Configure Generic Payment Button Receipt |
+| [docs/my/payments/payment-button/search.md](https://razorpay.com/docs/my/payments/payment-button/search.md) | Search a Payment Button |
+| [docs/my/payments/payment-button/states.md](https://razorpay.com/docs/my/payments/payment-button/states.md) | Payment Button States |
+| [docs/my/payments/payment-button/subscribe-to-webhooks.md](https://razorpay.com/docs/my/payments/payment-button/subscribe-to-webhooks.md) | Subscribe to Webhooks |
+| [docs/my/payments/payment-button/use-cases.md](https://razorpay.com/docs/my/payments/payment-button/use-cases.md) | Payment Button Use Cases |
+| [docs/my/payments/payment-button/view-reports.md](https://razorpay.com/docs/my/payments/payment-button/view-reports.md) | View Reports |
+| [docs/my/payments/payment-button.md](https://razorpay.com/docs/my/payments/payment-button.md) | About Payment Button |
+| [docs/my/payments/payment-gateway/android-integration/standard/customisation.md](https://razorpay.com/docs/my/payments/payment-gateway/android-integration/standard/customisation.md) | Customisation Options |
+| [docs/my/payments/payment-gateway/android-integration/standard/google-data-safety.md](https://razorpay.com/docs/my/payments/payment-gateway/android-integration/standard/google-data-safety.md) | Google Play Console - Data Safety |
+| [docs/my/payments/payment-gateway/android-integration/standard/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/android-integration/standard/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/android-integration/standard/payment-methods.md](https://razorpay.com/docs/my/payments/payment-gateway/android-integration/standard/payment-methods.md) | Additional Support for Payment Methods |
+| [docs/my/payments/payment-gateway/android-integration/standard/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/android-integration/standard/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/android-integration/standard.md](https://razorpay.com/docs/my/payments/payment-gateway/android-integration/standard.md) | Android Standard Checkout Prerequisites |
+| [docs/my/payments/payment-gateway/callback-url.md](https://razorpay.com/docs/my/payments/payment-gateway/callback-url.md) | Callback URL |
+| [docs/my/payments/payment-gateway/capacitor-integration/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/capacitor-integration/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/capacitor-integration/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/capacitor-integration/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/capacitor-integration.md](https://razorpay.com/docs/my/payments/payment-gateway/capacitor-integration.md) | Capacitor Standard SDK Prerequisites |
+| [docs/my/payments/payment-gateway/cordova-integration/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/cordova-integration/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/cordova-integration/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/cordova-integration/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/cordova-integration.md](https://razorpay.com/docs/my/payments/payment-gateway/cordova-integration.md) | Cordova Standard SDK Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/arastta/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/arastta/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/arastta/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/arastta/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/arastta.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/arastta.md) | Arastta Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/cs-cart/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/cs-cart/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/cs-cart/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/cs-cart/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/cs-cart.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/cs-cart.md) | CS-Cart Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/drupal-commerce/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/drupal-commerce/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/drupal-commerce/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/drupal-commerce/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/drupal-commerce.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/drupal-commerce.md) | Drupal Commerce Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/easy-digital-downloads/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/easy-digital-downloads/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/easy-digital-downloads/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/easy-digital-downloads/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/easy-digital-downloads.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/easy-digital-downloads.md) | Easy Digital Downloads Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/gravity-forms/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/gravity-forms/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/gravity-forms/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/gravity-forms/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/gravity-forms.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/gravity-forms.md) | Gravity Forms Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/magento/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/magento/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/magento/troubleshooting.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/magento/troubleshooting.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/magento.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/magento.md) | Magento Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/open-cart/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/open-cart/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/open-cart/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/open-cart/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/open-cart.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/open-cart.md) | OpenCart Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/prestashop/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/prestashop/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/prestashop/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/prestashop/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/prestashop.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/prestashop.md) | PrestaShop Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure/faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure/faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure/initiate-refunds.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure/initiate-refunds.md) | Initiate Refunds |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure/reconcile-payments.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure/reconcile-payments.md) | Reconcile Shopify Orders on the Dashboard |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/shopify-razorpay-secure.md) | Shopify Razorpay Secure Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/whmcs/faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/whmcs/faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/whmcs/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/whmcs/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/whmcs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/whmcs.md) | WHMCS Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/wix/faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/wix/faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/wix/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/wix/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/wix.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/wix.md) | Wix Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce.md) | WooCommerce Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/wordpress/faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/wordpress/faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/wordpress/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/wordpress/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ecommerce-plugins/wordpress.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/wordpress.md) | WordPress Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/ecommerce-plugins.md](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins.md) | About Ecommerce Plugins |
+| [docs/my/payments/payment-gateway/features.md](https://razorpay.com/docs/my/payments/payment-gateway/features.md) | Features |
+| [docs/my/payments/payment-gateway/flutter-integration/standard/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/flutter-integration/standard/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/flutter-integration/standard/payment-methods/api.md](https://razorpay.com/docs/my/payments/payment-gateway/flutter-integration/standard/payment-methods/api.md) | API Classes and Methods |
+| [docs/my/payments/payment-gateway/flutter-integration/standard/payment-methods/integration-tpv.md](https://razorpay.com/docs/my/payments/payment-gateway/flutter-integration/standard/payment-methods/integration-tpv.md) | Integrate Turbo UPI TPV |
+| [docs/my/payments/payment-gateway/flutter-integration/standard/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/flutter-integration/standard/troubleshooting-faqs.md) | Troubleshooting and FAQs |
+| [docs/my/payments/payment-gateway/flutter-integration/standard.md](https://razorpay.com/docs/my/payments/payment-gateway/flutter-integration/standard.md) | Flutter Standard Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/how-it-works.md](https://razorpay.com/docs/my/payments/payment-gateway/how-it-works.md) | How Payment Gateway Works |
+| [docs/my/payments/payment-gateway/ios-integration/standard/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/ios-integration/standard/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/ios-integration/standard/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/ios-integration/standard/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/ios-integration/standard.md](https://razorpay.com/docs/my/payments/payment-gateway/ios-integration/standard.md) | iOS Standard Checkout Prerequisites |
+| [docs/my/payments/payment-gateway/react-native-integration/standard/integration-steps-android.md](https://razorpay.com/docs/my/payments/payment-gateway/react-native-integration/standard/integration-steps-android.md) | Integration Steps (Android) |
+| [docs/my/payments/payment-gateway/react-native-integration/standard/integration-steps-ios.md](https://razorpay.com/docs/my/payments/payment-gateway/react-native-integration/standard/integration-steps-ios.md) | Integration Steps (iOS) |
+| [docs/my/payments/payment-gateway/react-native-integration/standard/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/react-native-integration/standard/troubleshooting-faqs.md) | Troubleshooting and FAQs |
+| [docs/my/payments/payment-gateway/react-native-integration/standard.md](https://razorpay.com/docs/my/payments/payment-gateway/react-native-integration/standard.md) | React Native Standard Plugin Prerequisites |
+| [docs/my/payments/payment-gateway/unsupported-platforms.md](https://razorpay.com/docs/my/payments/payment-gateway/unsupported-platforms.md) | Unsupported Platforms and Integrations |
+| [docs/my/payments/payment-gateway/web-integration/standard/best-practices.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/best-practices.md) | Best Practices for Standard Checkout Integration |
+| [docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods/display-configuration.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods/display-configuration.md) | Display the Configuration |
+| [docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods/sample-code.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods/sample-code.md) | Sample Codes |
+| [docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods/supported-methods.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods/supported-methods.md) | Supported Methods |
+| [docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods/understand-configuration.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods/understand-configuration.md) | Understand the Configuration |
+| [docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods.md) | About Payment Methods Configuration |
+| [docs/my/payments/payment-gateway/web-integration/standard/configure-restrict-payment-methods.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/configure-restrict-payment-methods.md) | Standard Web Integration - Configurability of Payment Methods |
+| [docs/my/payments/payment-gateway/web-integration/standard/integration-steps.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/integration-steps.md) | Integration Steps |
+| [docs/my/payments/payment-gateway/web-integration/standard/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/payment-gateway/web-integration/standard.md](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard.md) | Web Standard Checkout Prerequisites |
+| [docs/my/payments/payment-gateway.md](https://razorpay.com/docs/my/payments/payment-gateway.md) | About Payment Gateway |
+| [docs/my/payments/payment-links/apis.md](https://razorpay.com/docs/my/payments/payment-links/apis.md) | Payment Links APIs |
+| [docs/my/payments/payment-links/batch.md](https://razorpay.com/docs/my/payments/payment-links/batch.md) | Create Payment Links in Batches |
+| [docs/my/payments/payment-links/cancel.md](https://razorpay.com/docs/my/payments/payment-links/cancel.md) | Cancel a Payment Link |
+| [docs/my/payments/payment-links/create.md](https://razorpay.com/docs/my/payments/payment-links/create.md) | Create a Payment Link |
+| [docs/my/payments/payment-links/customise.md](https://razorpay.com/docs/my/payments/payment-links/customise.md) | Customise Payment Links |
+| [docs/my/payments/payment-links/duplicate.md](https://razorpay.com/docs/my/payments/payment-links/duplicate.md) | Duplicate a Payment Link |
+| [docs/my/payments/payment-links/edit.md](https://razorpay.com/docs/my/payments/payment-links/edit.md) | Edit a Payment Link |
+| [docs/my/payments/payment-links/faqs.md](https://razorpay.com/docs/my/payments/payment-links/faqs.md) | FAQs (Frequently Asked Questions) |
+| [docs/my/payments/payment-links/glossary.md](https://razorpay.com/docs/my/payments/payment-links/glossary.md) | Glossary |
+| [docs/my/payments/payment-links/how-it-works.md](https://razorpay.com/docs/my/payments/payment-links/how-it-works.md) | How Payment Link Works |
+| [docs/my/payments/payment-links/manage-team.md](https://razorpay.com/docs/my/payments/payment-links/manage-team.md) | Manage Team |
+| [docs/my/payments/payment-links/partial-payments.md](https://razorpay.com/docs/my/payments/payment-links/partial-payments.md) | Enable Partial Payments |
+| [docs/my/payments/payment-links/reminders.md](https://razorpay.com/docs/my/payments/payment-links/reminders.md) | Send Reminders |
+| [docs/my/payments/payment-links/resend.md](https://razorpay.com/docs/my/payments/payment-links/resend.md) | Resend a Payment Link |
+| [docs/my/payments/payment-links/search.md](https://razorpay.com/docs/my/payments/payment-links/search.md) | Search a Payment Link |
+| [docs/my/payments/payment-links/standard.md](https://razorpay.com/docs/my/payments/payment-links/standard.md) | Standard Payment Links |
+| [docs/my/payments/payment-links/states.md](https://razorpay.com/docs/my/payments/payment-links/states.md) | Payment Link States |
+| [docs/my/payments/payment-links/subscribe-to-webhooks.md](https://razorpay.com/docs/my/payments/payment-links/subscribe-to-webhooks.md) | Subscribe to Webhooks |
+| [docs/my/payments/payment-links/use-cases.md](https://razorpay.com/docs/my/payments/payment-links/use-cases.md) | Payment Links Use Cases |
+| [docs/my/payments/payment-links/view-reports.md](https://razorpay.com/docs/my/payments/payment-links/view-reports.md) | View Reports |
+| [docs/my/payments/payment-links.md](https://razorpay.com/docs/my/payments/payment-links.md) | About Payment Links |
+| [docs/my/payments/payment-methods/apple-pay/custom-integration/error-codes.md](https://razorpay.com/docs/my/payments/payment-methods/apple-pay/custom-integration/error-codes.md) | Error Codes |
+| [docs/my/payments/payment-methods/apple-pay/custom-integration/web-sdk/web-component.md](https://razorpay.com/docs/my/payments/payment-methods/apple-pay/custom-integration/web-sdk/web-component.md) | Web Component Integration |
+| [docs/my/payments/payment-methods/apple-pay/custom-integration/web-sdk/web-js-integration.md](https://razorpay.com/docs/my/payments/payment-methods/apple-pay/custom-integration/web-sdk/web-js-integration.md) | Web JS Integration |
+| [docs/my/payments/payment-methods/apple-pay/custom-integration/web-sdk.md](https://razorpay.com/docs/my/payments/payment-methods/apple-pay/custom-integration/web-sdk.md) | Apple Pay Web SDK |
+| [docs/my/payments/payment-methods/apple-pay/custom-integration.md](https://razorpay.com/docs/my/payments/payment-methods/apple-pay/custom-integration.md) | Integration Steps |
+| [docs/my/payments/payment-methods/apple-pay/s2s-integration.md](https://razorpay.com/docs/my/payments/payment-methods/apple-pay/s2s-integration.md) | S2S Integration |
+| [docs/my/payments/payment-methods/apple-pay.md](https://razorpay.com/docs/my/payments/payment-methods/apple-pay.md) | Apple Pay Standard Checkout |
+| [docs/my/payments/payment-methods/cards/features/3ds2.0.md](https://razorpay.com/docs/my/payments/payment-methods/cards/features/3ds2.0.md) | 3D Secure 2.0 Authentication Protocol (3DS2) |
+| [docs/my/payments/payment-methods/cards.md](https://razorpay.com/docs/my/payments/payment-methods/cards.md) | About Card Payments |
+| [docs/my/payments/payment-methods/duitnow/pay.md](https://razorpay.com/docs/my/payments/payment-methods/duitnow/pay.md) | DuitNow Pay |
+| [docs/my/payments/payment-methods/duitnow/qr.md](https://razorpay.com/docs/my/payments/payment-methods/duitnow/qr.md) | DuitNow QR |
+| [docs/my/payments/payment-methods/duitnow.md](https://razorpay.com/docs/my/payments/payment-methods/duitnow.md) | DuitNow |
+| [docs/my/payments/payment-methods/fpx/b2b-maker-checker.md](https://razorpay.com/docs/my/payments/payment-methods/fpx/b2b-maker-checker.md) | FPX B2B Maker-Checker |
+| [docs/my/payments/payment-methods/fpx.md](https://razorpay.com/docs/my/payments/payment-methods/fpx.md) | FPX |
+| [docs/my/payments/payment-methods/instalments/credit-card-instalments.md](https://razorpay.com/docs/my/payments/payment-methods/instalments/credit-card-instalments.md) | About Credit Card Instalments |
+| [docs/my/payments/payment-methods/instalments.md](https://razorpay.com/docs/my/payments/payment-methods/instalments.md) | About Instalments |
+| [docs/my/payments/payment-methods/pay-later.md](https://razorpay.com/docs/my/payments/payment-methods/pay-later.md) | Pay Later |
+| [docs/my/payments/payment-methods/upi.md](https://razorpay.com/docs/my/payments/payment-methods/upi.md) | UPI |
+| [docs/my/payments/payment-methods/wallets/alipay-plus.md](https://razorpay.com/docs/my/payments/payment-methods/wallets/alipay-plus.md) | Alipay+ |
+| [docs/my/payments/payment-methods/wallets/boost.md](https://razorpay.com/docs/my/payments/payment-methods/wallets/boost.md) | Boost |
+| [docs/my/payments/payment-methods/wallets/mcash.md](https://razorpay.com/docs/my/payments/payment-methods/wallets/mcash.md) | MCash |
+| [docs/my/payments/payment-methods/wallets/touch-n-go.md](https://razorpay.com/docs/my/payments/payment-methods/wallets/touch-n-go.md) | Touch'n Go |
+| [docs/my/payments/payment-methods/wallets.md](https://razorpay.com/docs/my/payments/payment-methods/wallets.md) | About Wallets |
+| [docs/my/payments/payment-methods.md](https://razorpay.com/docs/my/payments/payment-methods.md) | About Payment Methods |
+| [docs/my/payments/payment-pages/add-images-videos.md](https://razorpay.com/docs/my/payments/payment-pages/add-images-videos.md) | Add Images, Videos and More |
+| [docs/my/payments/payment-pages/batch.md](https://razorpay.com/docs/my/payments/payment-pages/batch.md) | Upload Data on Payment Pages in Batches |
+| [docs/my/payments/payment-pages/create.md](https://razorpay.com/docs/my/payments/payment-pages/create.md) | Create a Payment Page |
+| [docs/my/payments/payment-pages/customise.md](https://razorpay.com/docs/my/payments/payment-pages/customise.md) | Customise Payment Pages |
+| [docs/my/payments/payment-pages/domain-linking.md](https://razorpay.com/docs/my/payments/payment-pages/domain-linking.md) | Add Domain Link (Beta) |
+| [docs/my/payments/payment-pages/faqs.md](https://razorpay.com/docs/my/payments/payment-pages/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/payment-pages/glossary.md](https://razorpay.com/docs/my/payments/payment-pages/glossary.md) | Glossary |
+| [docs/my/payments/payment-pages/goal-tracker.md](https://razorpay.com/docs/my/payments/payment-pages/goal-tracker.md) | Configure Goal Tracker |
+| [docs/my/payments/payment-pages/how-it-works.md](https://razorpay.com/docs/my/payments/payment-pages/how-it-works.md) | How Payment Pages Work |
+| [docs/my/payments/payment-pages/manage.md](https://razorpay.com/docs/my/payments/payment-pages/manage.md) | Manage Payment Pages |
+| [docs/my/payments/payment-pages/plugins-add-ons/fb-payment-success.md](https://razorpay.com/docs/my/payments/payment-pages/plugins-add-ons/fb-payment-success.md) | Add Facebook Pixel on Payment Success Page |
+| [docs/my/payments/payment-pages/plugins-add-ons/fb-pixel.md](https://razorpay.com/docs/my/payments/payment-pages/plugins-add-ons/fb-pixel.md) | Add Facebook Pixel |
+| [docs/my/payments/payment-pages/plugins-add-ons/google-analytics.md](https://razorpay.com/docs/my/payments/payment-pages/plugins-add-ons/google-analytics.md) | Add Google Analytics Tracking ID |
+| [docs/my/payments/payment-pages/plugins-add-ons/shiprocket.md](https://razorpay.com/docs/my/payments/payment-pages/plugins-add-ons/shiprocket.md) | Integrate Payment Pages With Shiprocket |
+| [docs/my/payments/payment-pages/receipt.md](https://razorpay.com/docs/my/payments/payment-pages/receipt.md) | Configure Payment Pages Receipt |
+| [docs/my/payments/payment-pages/search.md](https://razorpay.com/docs/my/payments/payment-pages/search.md) | Search for Payment Pages |
+| [docs/my/payments/payment-pages/states.md](https://razorpay.com/docs/my/payments/payment-pages/states.md) | Payment Pages States |
+| [docs/my/payments/payment-pages/subscribe-to-webhooks.md](https://razorpay.com/docs/my/payments/payment-pages/subscribe-to-webhooks.md) | Subscribe to Webhooks |
+| [docs/my/payments/payment-pages/use-cases.md](https://razorpay.com/docs/my/payments/payment-pages/use-cases.md) | Payment Pages Use Cases |
+| [docs/my/payments/payment-pages/view-reports.md](https://razorpay.com/docs/my/payments/payment-pages/view-reports.md) | View Reports |
+| [docs/my/payments/payment-pages.md](https://razorpay.com/docs/my/payments/payment-pages.md) | About Payment Pages |
+| [docs/my/payments/payments/apis.md](https://razorpay.com/docs/my/payments/payments/apis.md) | Payments APIs |
+| [docs/my/payments/payments/capture-settings.md](https://razorpay.com/docs/my/payments/payments/capture-settings.md) | Payment Capture Settings |
+| [docs/my/payments/payments/dashboard.md](https://razorpay.com/docs/my/payments/payments/dashboard.md) | Payments - Dashboard Actions |
+| [docs/my/payments/payments/faqs.md](https://razorpay.com/docs/my/payments/payments/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/payments/late-authorisation/handle.md](https://razorpay.com/docs/my/payments/payments/late-authorisation/handle.md) | Handle Late Authorised Payments |
+| [docs/my/payments/payments/late-authorisation.md](https://razorpay.com/docs/my/payments/payments/late-authorisation.md) | Late Payment Authorisations |
+| [docs/my/payments/payments/test-card-details.md](https://razorpay.com/docs/my/payments/payments/test-card-details.md) | Test Card Details |
+| [docs/my/payments/payments.md](https://razorpay.com/docs/my/payments/payments.md) | About Payments |
+| [docs/my/payments/quickstart.md](https://razorpay.com/docs/my/payments/quickstart.md) | Quickstart Guide |
+| [docs/my/payments/refunds/apis.md](https://razorpay.com/docs/my/payments/refunds/apis.md) | Refunds APIs |
+| [docs/my/payments/refunds/auto-refunds.md](https://razorpay.com/docs/my/payments/refunds/auto-refunds.md) | Auto-Refunds |
+| [docs/my/payments/refunds/communication.md](https://razorpay.com/docs/my/payments/refunds/communication.md) | Refund Communication |
+| [docs/my/payments/refunds/errors.md](https://razorpay.com/docs/my/payments/refunds/errors.md) | Handle Refund Errors |
+| [docs/my/payments/refunds/faqs.md](https://razorpay.com/docs/my/payments/refunds/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/refunds/issue.md](https://razorpay.com/docs/my/payments/refunds/issue.md) | Issue Refunds |
+| [docs/my/payments/refunds/normal.md](https://razorpay.com/docs/my/payments/refunds/normal.md) | Normal Refunds |
+| [docs/my/payments/refunds/subscribe-to-webhooks.md](https://razorpay.com/docs/my/payments/refunds/subscribe-to-webhooks.md) | Subscribe to Webhooks |
+| [docs/my/payments/refunds/view.md](https://razorpay.com/docs/my/payments/refunds/view.md) | View Refunds |
+| [docs/my/payments/refunds.md](https://razorpay.com/docs/my/payments/refunds.md) | About Refunds |
+| [docs/my/payments/route/apis.md](https://razorpay.com/docs/my/payments/route/apis.md) | Route APIs |
+| [docs/my/payments/route/dashboard.md](https://razorpay.com/docs/my/payments/route/dashboard.md) | Route Dashboard |
+| [docs/my/payments/route/faqs.md](https://razorpay.com/docs/my/payments/route/faqs.md) | FAQs (Frequently Asked Questions) |
+| [docs/my/payments/route/glossary.md](https://razorpay.com/docs/my/payments/route/glossary.md) | Glossary |
+| [docs/my/payments/route/integration-guide.md](https://razorpay.com/docs/my/payments/route/integration-guide.md) | Integrate With Route |
+| [docs/my/payments/route/linked-account/initiate-refund.md](https://razorpay.com/docs/my/payments/route/linked-account/initiate-refund.md) | Initiate Refund - Linked Account Dashboard |
+| [docs/my/payments/route/linked-account/manage-profile.md](https://razorpay.com/docs/my/payments/route/linked-account/manage-profile.md) | Manage Profile and Team - Linked Account Dashboard |
+| [docs/my/payments/route/linked-account/reversals-settlements.md](https://razorpay.com/docs/my/payments/route/linked-account/reversals-settlements.md) | Reversals and Settlements - Linked Account Dashboard |
+| [docs/my/payments/route/linked-account.md](https://razorpay.com/docs/my/payments/route/linked-account.md) | Linked Accounts |
+| [docs/my/payments/route/refund.md](https://razorpay.com/docs/my/payments/route/refund.md) | Refund to Customers |
+| [docs/my/payments/route/reversal.md](https://razorpay.com/docs/my/payments/route/reversal.md) | Payment Reversals |
+| [docs/my/payments/route/schedule-settlement.md](https://razorpay.com/docs/my/payments/route/schedule-settlement.md) | Schedule Settlements |
+| [docs/my/payments/route/subscribe-to-webhooks.md](https://razorpay.com/docs/my/payments/route/subscribe-to-webhooks.md) | Subscribe to Webhooks |
+| [docs/my/payments/route/transfer-fees-example.md](https://razorpay.com/docs/my/payments/route/transfer-fees-example.md) | Transfers and Related Fees Example |
+| [docs/my/payments/route/transfer-funds-to-linked-accounts.md](https://razorpay.com/docs/my/payments/route/transfer-funds-to-linked-accounts.md) | Transfer Funds to Linked Accounts |
+| [docs/my/payments/route/use-cases.md](https://razorpay.com/docs/my/payments/route/use-cases.md) | Route Use Cases |
+| [docs/my/payments/route/view-reports.md](https://razorpay.com/docs/my/payments/route/view-reports.md) | View Reports |
+| [docs/my/payments/route.md](https://razorpay.com/docs/my/payments/route.md) | About Route |
+| [docs/my/payments/server-integration/dot-net/integration-steps.md](https://razorpay.com/docs/my/payments/server-integration/dot-net/integration-steps.md) | Integration Steps |
+| [docs/my/payments/server-integration/dot-net/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/server-integration/dot-net/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/server-integration/dot-net.md](https://razorpay.com/docs/my/payments/server-integration/dot-net.md) | .NET Server SDK Prerequisites |
+| [docs/my/payments/server-integration/go/integration-steps.md](https://razorpay.com/docs/my/payments/server-integration/go/integration-steps.md) | Integration Steps |
+| [docs/my/payments/server-integration/go.md](https://razorpay.com/docs/my/payments/server-integration/go.md) | Go Server SDK Prerequisites |
+| [docs/my/payments/server-integration/java/integration-steps.md](https://razorpay.com/docs/my/payments/server-integration/java/integration-steps.md) | Integration Steps |
+| [docs/my/payments/server-integration/java.md](https://razorpay.com/docs/my/payments/server-integration/java.md) | Java Server SDK Prerequisites |
+| [docs/my/payments/server-integration/nodejs/integration-steps.md](https://razorpay.com/docs/my/payments/server-integration/nodejs/integration-steps.md) | Integration Steps |
+| [docs/my/payments/server-integration/nodejs/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/server-integration/nodejs/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/server-integration/nodejs.md](https://razorpay.com/docs/my/payments/server-integration/nodejs.md) | Node.js Server SDK Prerequisites |
+| [docs/my/payments/server-integration/php/integration-steps.md](https://razorpay.com/docs/my/payments/server-integration/php/integration-steps.md) | Integration Steps |
+| [docs/my/payments/server-integration/php/troubleshooting-faqs.md](https://razorpay.com/docs/my/payments/server-integration/php/troubleshooting-faqs.md) | Troubleshooting & FAQs |
+| [docs/my/payments/server-integration/php.md](https://razorpay.com/docs/my/payments/server-integration/php.md) | PHP Server SDK Prerequisites |
+| [docs/my/payments/server-integration/python/integration-steps.md](https://razorpay.com/docs/my/payments/server-integration/python/integration-steps.md) | Integration Steps |
+| [docs/my/payments/server-integration/python.md](https://razorpay.com/docs/my/payments/server-integration/python.md) | Python Server SDK Prerequisites |
+| [docs/my/payments/server-integration/ruby/integration-steps.md](https://razorpay.com/docs/my/payments/server-integration/ruby/integration-steps.md) | Integration Steps |
+| [docs/my/payments/server-integration/ruby.md](https://razorpay.com/docs/my/payments/server-integration/ruby.md) | Ruby Server SDK Prerequisites |
+| [docs/my/payments/server-integration.md](https://razorpay.com/docs/my/payments/server-integration.md) | About Server Integrations |
+| [docs/my/payments/set-up.md](https://razorpay.com/docs/my/payments/set-up.md) | Set up a Razorpay Curlec Account |
+| [docs/my/payments/settlements/apis.md](https://razorpay.com/docs/my/payments/settlements/apis.md) | Settlements APIs |
+| [docs/my/payments/settlements/dashboard.md](https://razorpay.com/docs/my/payments/settlements/dashboard.md) | Settlements - Dashboard Actions |
+| [docs/my/payments/settlements/faqs.md](https://razorpay.com/docs/my/payments/settlements/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/settlements.md](https://razorpay.com/docs/my/payments/settlements.md) | About Settlements |
+| [docs/my/payments/solutions/bfsi.md](https://razorpay.com/docs/my/payments/solutions/bfsi.md) | Banking, Financial Services & Insurance |
+| [docs/my/payments/solutions/ecommerce.md](https://razorpay.com/docs/my/payments/solutions/ecommerce.md) | Ecommerce |
+| [docs/my/payments/solutions/travel.md](https://razorpay.com/docs/my/payments/solutions/travel.md) | Travel |
+| [docs/my/payments/subscriptions/apis.md](https://razorpay.com/docs/my/payments/subscriptions/apis.md) | Subscriptions APIs |
+| [docs/my/payments/subscriptions/create-plans.md](https://razorpay.com/docs/my/payments/subscriptions/create-plans.md) | Create and View Plans |
+| [docs/my/payments/subscriptions/create-subscription-links.md](https://razorpay.com/docs/my/payments/subscriptions/create-subscription-links.md) | Create Subscriptions via Links |
+| [docs/my/payments/subscriptions/create.md](https://razorpay.com/docs/my/payments/subscriptions/create.md) | Create Subscriptions |
+| [docs/my/payments/subscriptions/faqs.md](https://razorpay.com/docs/my/payments/subscriptions/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/payments/subscriptions/glossary.md](https://razorpay.com/docs/my/payments/subscriptions/glossary.md) | Glossary |
+| [docs/my/payments/subscriptions/integration-guide.md](https://razorpay.com/docs/my/payments/subscriptions/integration-guide.md) | Integrate With Subscriptions |
+| [docs/my/payments/subscriptions/manually-charge-card.md](https://razorpay.com/docs/my/payments/subscriptions/manually-charge-card.md) | Charge a Card Manually |
+| [docs/my/payments/subscriptions/notifications.md](https://razorpay.com/docs/my/payments/subscriptions/notifications.md) | Notifications |
+| [docs/my/payments/subscriptions/pause-resume-cancel.md](https://razorpay.com/docs/my/payments/subscriptions/pause-resume-cancel.md) | Pause, Resume and Cancel a Subscription |
+| [docs/my/payments/subscriptions/payment-retries.md](https://razorpay.com/docs/my/payments/subscriptions/payment-retries.md) | Payment Retries |
+| [docs/my/payments/subscriptions/plugins/woocommerce/build-integration.md](https://razorpay.com/docs/my/payments/subscriptions/plugins/woocommerce/build-integration.md) | 1. Build Integration |
+| [docs/my/payments/subscriptions/plugins/woocommerce/go-live-checklist.md](https://razorpay.com/docs/my/payments/subscriptions/plugins/woocommerce/go-live-checklist.md) | 3. Go-live Checklist |
+| [docs/my/payments/subscriptions/plugins/woocommerce/manage-subscriptions.md](https://razorpay.com/docs/my/payments/subscriptions/plugins/woocommerce/manage-subscriptions.md) | Manage Subscriptions |
+| [docs/my/payments/subscriptions/plugins/woocommerce/subscriptions-status.md](https://razorpay.com/docs/my/payments/subscriptions/plugins/woocommerce/subscriptions-status.md) | Subscription Status |
+| [docs/my/payments/subscriptions/plugins/woocommerce/test-integration.md](https://razorpay.com/docs/my/payments/subscriptions/plugins/woocommerce/test-integration.md) | 2. Test Integration |
+| [docs/my/payments/subscriptions/plugins/woocommerce.md](https://razorpay.com/docs/my/payments/subscriptions/plugins/woocommerce.md) | Razorpay Curlec Subscriptions Plugin for WooCommerce |
+| [docs/my/payments/subscriptions/settings.md](https://razorpay.com/docs/my/payments/subscriptions/settings.md) | Subscriptions Settings |
+| [docs/my/payments/subscriptions/states.md](https://razorpay.com/docs/my/payments/subscriptions/states.md) | Subscriptions States |
+| [docs/my/payments/subscriptions/subscribe-to-webhooks.md](https://razorpay.com/docs/my/payments/subscriptions/subscribe-to-webhooks.md) | Subscribe to Webhooks |
+| [docs/my/payments/subscriptions/supported-banks-apps.md](https://razorpay.com/docs/my/payments/subscriptions/supported-banks-apps.md) | Supported Banks and Apps |
+| [docs/my/payments/subscriptions/supported-payment-methods.md](https://razorpay.com/docs/my/payments/subscriptions/supported-payment-methods.md) | Supported Payment Methods |
+| [docs/my/payments/subscriptions/test.md](https://razorpay.com/docs/my/payments/subscriptions/test.md) | Test Subscriptions |
+| [docs/my/payments/subscriptions/update.md](https://razorpay.com/docs/my/payments/subscriptions/update.md) | Update a Subscription |
+| [docs/my/payments/subscriptions/use-cases.md](https://razorpay.com/docs/my/payments/subscriptions/use-cases.md) | Subscriptions Use Cases |
+| [docs/my/payments/subscriptions/view.md](https://razorpay.com/docs/my/payments/subscriptions/view.md) | View Subscription Details |
+| [docs/my/payments/subscriptions/workflow.md](https://razorpay.com/docs/my/payments/subscriptions/workflow.md) | How Subscriptions Work |
+| [docs/my/payments/subscriptions.md](https://razorpay.com/docs/my/payments/subscriptions.md) | About Subscriptions |
+| [docs/my/payments.md](https://razorpay.com/docs/my/payments.md) | Razorpay Curlec Payments Suite |
+| [docs/my/security/checklist.md](https://razorpay.com/docs/my/security/checklist.md) | Business Security Checklist |
+| [docs/my/security/customers.md](https://razorpay.com/docs/my/security/customers.md) | Security For Customers |
+| [docs/my/security/shared-responsibility-model.md](https://razorpay.com/docs/my/security/shared-responsibility-model.md) | Shared Responsibility Model |
+| [docs/my/security/whitelists/guidelines-ssl-cert-rotation.md](https://razorpay.com/docs/my/security/whitelists/guidelines-ssl-cert-rotation.md) | Guidelines for SSL Certificate Rotation |
+| [docs/my/security/whitelists.md](https://razorpay.com/docs/my/security/whitelists.md) | Razorpay Curlec IPs and Certificates |
+| [docs/my/security.md](https://razorpay.com/docs/my/security.md) | About Razorpay Curlec Security |
+| [docs/my/webhooks/all.md](https://razorpay.com/docs/my/webhooks/all.md) | All Webhook Events |
+| [docs/my/webhooks/best-practices.md](https://razorpay.com/docs/my/webhooks/best-practices.md) | Best Practices |
+| [docs/my/webhooks/faqs.md](https://razorpay.com/docs/my/webhooks/faqs.md) | Frequently Asked Questions (FAQs) |
+| [docs/my/webhooks/invoices.md](https://razorpay.com/docs/my/webhooks/invoices.md) | Invoices Webhook Events |
+| [docs/my/webhooks/orders.md](https://razorpay.com/docs/my/webhooks/orders.md) | Orders Webhook Events |
+| [docs/my/webhooks/payment-links.md](https://razorpay.com/docs/my/webhooks/payment-links.md) | Payment Links Webhook Events |
+| [docs/my/webhooks/payments.md](https://razorpay.com/docs/my/webhooks/payments.md) | Payments Webhook Events |
+| [docs/my/webhooks/refunds.md](https://razorpay.com/docs/my/webhooks/refunds.md) | Refunds Webhook Events |
+| [docs/my/webhooks/route.md](https://razorpay.com/docs/my/webhooks/route.md) | Route Webhook Events |
+| [docs/my/webhooks/settlements.md](https://razorpay.com/docs/my/webhooks/settlements.md) | Settlements Webhook Events |
+| [docs/my/webhooks/setup-edit-payments.md](https://razorpay.com/docs/my/webhooks/setup-edit-payments.md) | Set Up and Edit Payments Webhooks |
+| [docs/my/webhooks/subscriptions.md](https://razorpay.com/docs/my/webhooks/subscriptions.md) | Subscriptions Webhook Events |
+| [docs/my/webhooks/validate-test.md](https://razorpay.com/docs/my/webhooks/validate-test.md) | Validate and Test Webhooks |
+| [docs/my/webhooks.md](https://razorpay.com/docs/my/webhooks.md) | About Webhooks |
 | [docs/partners/apis.md](https://razorpay.com/docs/partners/apis.md) | About Partners APIs |
 | [docs/partners/become-a-partner.md](https://razorpay.com/docs/partners/become-a-partner.md) | Become a Razorpay Partner |
 | [docs/partners/changelog.md](https://razorpay.com/docs/partners/changelog.md) | Partners Changelog |
@@ -2685,6 +3173,7 @@ Pages: 4565
 | [docs/payments/customers.md](https://razorpay.com/docs/payments/customers.md) | About Customers |
 | [docs/payments/dashboard/account-settings/account-details.md](https://razorpay.com/docs/payments/dashboard/account-settings/account-details.md) | Account Details |
 | [docs/payments/dashboard/account-settings/activation-details.md](https://razorpay.com/docs/payments/dashboard/account-settings/activation-details.md) | Account Activation Details |
+| [docs/payments/dashboard/account-settings/api-key-secrets.md](https://razorpay.com/docs/payments/dashboard/account-settings/api-key-secrets.md) | Manage API Key Secrets |
 | [docs/payments/dashboard/account-settings/api-keys.md](https://razorpay.com/docs/payments/dashboard/account-settings/api-keys.md) | API Keys |
 | [docs/payments/dashboard/account-settings/balances.md](https://razorpay.com/docs/payments/dashboard/account-settings/balances.md) | Balances |
 | [docs/payments/dashboard/account-settings/bank-account-details.md](https://razorpay.com/docs/payments/dashboard/account-settings/bank-account-details.md) | Bank Account Details |
@@ -4414,6 +4903,7 @@ Pages: 4565
 | [docs/webhooks/invoices.md](https://razorpay.com/docs/webhooks/invoices.md) | Invoices Webhook Events |
 | [docs/webhooks/orders.md](https://razorpay.com/docs/webhooks/orders.md) | Orders Webhook Events |
 | [docs/webhooks/partners/oauth.md](https://razorpay.com/docs/webhooks/partners/oauth.md) | Partners OAuth Webhook Events |
+| [docs/webhooks/partners/onboarding-apis.md](https://razorpay.com/docs/webhooks/partners/onboarding-apis.md) | Onboarding APIs Webhook Events |
 | [docs/webhooks/payment-links.md](https://razorpay.com/docs/webhooks/payment-links.md) | Payment Links Webhook Events |
 | [docs/webhooks/payment-methods/bank-transfer.md](https://razorpay.com/docs/webhooks/payment-methods/bank-transfer.md) | Bank Transfer or ECMS Webhook Events |
 | [docs/webhooks/payment-methods/otc.md](https://razorpay.com/docs/webhooks/payment-methods/otc.md) | OTC (Cash or Cheque) Webhook Events |

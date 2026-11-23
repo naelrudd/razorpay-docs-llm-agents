@@ -1,0 +1,767 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Integration Steps (iOS)
+
+> Steps to integrate your React Native iOS application with Razorpay Curlec Payment Gateway.
+
+Available in
+🇮🇳 India
+🇲🇾 Malaysia
+🇸🇬 Singapore
+
+Follow these steps to integrate your React Native iOS application:
+
+> [card] [1. Build Integration](https://razorpay.com/docs/my/payments/payment-gateway/react-native-integration/standard/integration-steps-ios.md#1-build-integration)
+>
+> Integrate React iOS Standard Checkout.
+
+> [card] [2. Test Integration](https://razorpay.com/docs/my/payments/payment-gateway/react-native-integration/standard/integration-steps-ios.md#2-test-integration)
+>
+> Test the integration by making a test payment.
+
+> [card] [3. Go-live Checklist](https://razorpay.com/docs/my/payments/payment-gateway/react-native-integration/standard/integration-steps-ios.md#3-go-live-checklist)
+>
+> Check the go-live checklist.
+
+> [!WARNING]
+>
+> **Watch Out!**
+>
+> If you use M1 MacBook, you need to make [these changes](#m1-macbook-changes) in your `podfile`.
+
+## 1. Build Integration
+
+Follow the steps given below:
+
+> [accordion] 1 Install Razorpay Curlec React Native SDK
+>
+> Install the SDK using the following `npm` command in the **Terminal** window. If you are using Windows, please use **Git Bash** instead of the **Command Prompt** window. Ensure that you run this code within your React Native project folder in **Terminal** window.
+>
+> ```javascript Installation Code theme={null}
+> //using npm
+> $ npm install react-native-razorpay --save
+> ```
+>
+> Additionally, run the code given below if you are using `yarn` or `expo`:
+>
+> ```javascript Installation Code using yarn theme={null}
+> // using yarn
+> $ yarn add react-native-razorpay
+> ```
+>
+> ```javascript Installation Code using expo theme={null}
+> // for expo
+> $ npx expo install react-native-razorpay
+> ```
+
+> [accordion] 2 Open Podfile and Update Platform Version
+>
+> Install pods after updating the iOS platform. This will install all pods in the Podfile at the exact versions.\\
+>
+> ```javascript Cocoapod Step theme={null}
+> pod install && cd ..
+> ```
+
+> [accordion] 3 Install Pods Using Cocoapods
+>
+> Navigate to the **ios** folder and open **Podfile**. You can do this using the following code.
+>
+> ```javascript Open Podfile theme={null}
+> $ cd ios && open podfile
+> ```
+>
+> Change the platform version from `9.0` to `10.0` in the Podfile.\
+> \\
+>
+> ![](https://razorpay.com/docs/build/browser/assets/images/react-native-change_platform_version_podfile.jpg)
+
+> [accordion] 4 Run React Native App
+>
+> Run the React Native app.
+>
+> ```javascript Run App theme={null}
+> npx react-native run-ios
+> ```
+>
+> The SDK has automatically linked with React Native project. You do not need to perform any additional manual steps.
+>
+> > [accordion] Expo Application
+> >
+> > After adding the `react-native-razorpay` package, use the option to prebuild the app. This generates the **iOS** platform folders in the project to use native-modules.
+> >
+> > ```javascript Run theme={null}
+> > npx expo prebuild
+> > ```
+> >
+> > The application is installed on the device/emulator.
+> >
+> > ```javascript theme={null}
+> > npx expo run:[ios] --device
+> > ```
+
+> [accordion] 5 Create an Order in Server
+>
+> **Order is an important step in the payment process.**
+>
+> * An order should be created for every payment.
+>
+> * You can create an order using the [Orders API](#api-sample-code). It is a server-side API call. Know how to [authenticate](https://razorpay.com/docs/my/payments/dashboard/account-settings/api-keys.md#generate-api-keys) Orders API.
+>
+> * The `order_id` received in the response should be passed to the checkout. This ties the order with the payment and secures the request from being tampered.
+>
+> > [!WARNING]
+> >
+> > **Watch Out!**
+> >
+> > Payments made without an `order_id` cannot be captured and will be automatically refunded. You must create an order before initiating payments to ensure proper payment processing.
+>
+> ### API Sample Code
+>
+> Use this endpoint to create an order using the Orders API.
+>
+> `POST /orders`
+>
+> ```bash Curl theme={null}
+> curl -X POST https://api.razorpay.com/v1/orders 
+> -U [YOUR_KEY_ID]:[YOUR_KEY_SECRET]
+> -H 'content-type:application/json'
+> -d '{
+>     "amount": 50000,
+>     "currency": "MYR",
+>     "receipt": "qwsaq1",
+>     "partial_payment": true,
+>     "first_payment_min_amount": 230
+> }'
+> ```
+>
+> ```java Java theme={null}
+> RazorpayClient razorpay = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+>   JSONObject orderRequest = new JSONObject();
+>   orderRequest.put("amount", 50000); // amount in the smallest currency unit
+>   orderRequest.put("currency", "MYR");
+>   orderRequest.put("receipt", "order_rcptid_11");
+>   Order order = razorpay.Orders.create(orderRequest);
+> } catch (RazorpayException e) {
+>   // Handle Exception
+>   System.out.println(e.getMessage());
+> }
+> ```
+>
+> ```python Python theme={null}
+> import razorpay
+> client = razorpay.Client(auth=("YOUR_ID", "YOUR_SECRET"))
+> DATA = {
+>     "amount": 50000,
+>     "currency": "MYR",
+>     "receipt": "receipt#1",
+>     "notes": {
+>         "key1": "value3",
+>         "key2": "value2"
+>     }
+> }
+> client.order.create(data=DATA)
+> ```
+>
+> ```php PHP theme={null}
+> $api = new Api($key_id, $secret);
+> $api->order->create(array('receipt' => '123', 'amount' => 50000, 'currency' => 'MYR', 'notes'=> array('key1'=> 'value3','key2'=> 'value2')));
+> ```
+>
+> ```csharp .NET theme={null}
+> RazorpayClient client = new RazorpayClient(your_key_id, your_secret);
+> Dictionary<string, object> options = new Dictionary<string,object>();
+> options.Add("amount", 50000); // amount in the smallest currency unit
+> options.add("receipt", "order_rcptid_11");
+> options.add("currency", "MYR");
+> Order order = client.Order.Create(options);
+> ```
+>
+> ```ruby Ruby theme={null}
+> require "razorpay"
+> Razorpay.setup('YOUR_KEY_ID', 'YOUR_SECRET')
+> options = amount: 50000, currency: 'MYR', receipt: '<order_rcptid_11>'
+> order = Razorpay::Order.create
+> ```
+>
+> ```javascript Node.js theme={null}
+> var instance = new Razorpay({ key_id: 'YOUR_KEY_ID', key_secret: 'YOUR_SECRET' })
+> instance.orders.create({
+>   amount: 50000,
+>   currency: "MYR",
+>   receipt: "receipt#1",
+>   notes: {
+>     key1: "value3",
+>     key2: "value2"
+>   }
+> })
+> ```
+>
+> ```go Go theme={null}
+> import ( razorpay "github.com/razorpay/razorpay-go" )
+> client := razorpay.NewClient("YOUR_KEY_ID", "YOUR_SECRET")
+> data := map[string]interface{}{
+>   "amount": 50000,
+>   "currency": "MYR",
+>   "receipt": "some_receipt_id"
+> }
+> body, err := client.Order.Create(data)
+> ```
+>
+> ```json Success Response theme={null}
+> {
+>     "id": "order_IluGWxBm9U8zJ8",
+>     "entity": "order",
+>     "amount": 50000,
+>     "amount_paid": 0,
+>     "amount_due": 50000,
+>     "currency": "MYR",
+>     "receipt": "rcptid_11",
+>     "offer_id": null,
+>     "status": "created",
+>     "attempts": 0,
+>     "notes": [],
+>     "created_at": 1642662092
+> }
+> ```
+>
+> ```json Failure Response theme={null}
+> {
+> "error": {
+>     "code": "BAD_REQUEST_ERROR",
+>     "description": "Order amount less than minimum amount allowed",
+>     "source": "business",
+>     "step": "payment_initiation",
+>     "reason": "input_validation_failed",
+>     "metadata": {},
+>     "field": "amount"
+> }
+> }
+> ```
+>
+> > [accordion] Request Parameters
+> >
+> > `amount` *mandatory*
+> > : `integer` The transaction amount, expressed in the currency subunit. For example, for an actual amount of , the value of this field should be `22225`.
+> >
+> > `currency` *mandatory*
+> > : `string` The currency in which the transaction should be made.  See the [list of supported currencies](https://razorpay.com/docs/my/payments/international-payments#malaysian-businesses). Length must be of 3 characters.
+> >
+> > `receipt` *optional*
+> > : `string` Your receipt id for this order should be passed here. Maximum length is 40 characters.
+> >
+> > `notes` *optional*
+> > : `json object` Key-value pair that can be used to store additional information about the entity. Maximum 15 key-value pairs, 256 characters (maximum) each. For example, `"note_key": "Beam me up Scotty”`.
+> >
+> > `partial_payment` *optional*
+> > : `boolean` Indicates whether the customer can make a partial payment. Possible values:
+> >
+> > * `true`: The customer can make partial payments.
+> > * `false` (default): The customer cannot make partial payments.
+> >
+> > `first_payment_min_amount` *optional*
+> > : `integer` Minimum amount that must be paid by the customer as the first partial payment. For example, if an amount of  is to be received from the customer in two installments of #1 - RM 5,000, #2 - RM 2,000, then you can set this value as `500000`. This parameter should be passed only if `partial_payment` is `true`.
+>
+> > [accordion] Response Parameters
+> >
+> > Descriptions for the response parameters are present in the [Orders Entity](https://razorpay.com/docs/my/api/orders/entity.md) parameters table.
+>
+> > [accordion] Error Response Parameters
+> >
+> > The error response parameters are available in the [API Reference Guide](https://razorpay.com/docs/my/api/orders/create.md).
+
+> [accordion] 6 Add Razorpay Curlec Checkout Options to .js File
+>
+> To integrate the Razorpay Curlec Checkout with your React Native app, you must add the Checkout Display Options in the **.js** file.
+>
+> Open the **.js** file in your project folder and perform the following:
+>
+> 1. Import the `RazorpayCheckout` module to your component.
+>
+> ```javascript Import Razorpay Checkout Module theme={null}
+> import RazorpayCheckout from 'react-native-razorpay';
+> ```
+>
+> 2. Call the `RazorpayCheckout.open` method with the payment options. The method returns a JS Promise where the `then` part corresponds to a successful payment and the `catch` part corresponds to payment failure.
+>
+> ```javascript Checkout Options theme={null}
+> <TouchableHighlight onPress={() => {
+>     var options = {
+>     description: 'Credits towards consultation',
+>     image: 'https://i.imgur.com/3g7nmJC.jpg',
+>     currency: 'MYR',
+>     key: '<YOUR_KEY_ID>',
+>     amount: '50000',
+>     name: 'Acme Corp',
+>     order_id: 'order_DslnoIgkIDL8Zt',//Replace this with an order_id created using Orders API.
+>     prefill: {
+>       email: '<email>',
+>       contact: '<phone>',
+>       name: '<name>'
+>     },
+>     theme: {color: '#53a20e'}
+>   }
+>   RazorpayCheckout.open(options).then((data) => {
+>     // handle success
+>     alert(`Success: ${data.razorpay_payment_id}`);
+>   }).catch((error) => {
+>     // handle failure
+>     alert(`Error: ${error.code} | ${error.description}`);
+>   });
+> }}>
+> ```
+>
+> > [accordion] Checkout Options
+> >
+> > You must pass these parameters in Checkout to initiate the payment.
+> >
+> > `key` *mandatory*
+> > : `string` API Key ID generated from the Dashboard.
+> >
+> > `amount` *mandatory*
+> > : `integer` The amount to be paid by the customer in sen. For example, if the amount is , enter `222250`.
+> >
+> > `currency` *mandatory*
+> > : `string` The currency in which the payment should be made by the customer. Length must be of 3 characters.
+> >
+> > `name` *mandatory*
+> > : `string` Your Business/Enterprise name shown on the Checkout form. For example, **Acme Corp**.
+> >
+> > `description` *optional*
+> > : `string` Description of the purchase item shown on the Checkout form. It should start with an alphanumeric character.
+> >
+> > `image` *optional*
+> > : `string` Link to an image (usually your business logo) shown on the Checkout form. Can also be a **base64** string if you are not loading the image from a network.
+> >
+> > `order_id` *mandatory*
+> > : `string` Order ID generated via [Orders API](https://razorpay.com/docs/my/api/orders/create.md).
+> >
+> > `prefill`
+> > : `object` You can prefill the following details at Checkout.
+> >
+> > > [!NOTE]
+> > >
+> > > **Boost Conversions and Minimise Drop-offs**
+> > >
+> > > * Autofill customer contact details, especially phone number to ease form completion. Include customer’s phone number in the `contact` parameter of the JSON request's `prefill` object. Format: +(country code)(phone number). Example: "contact": "+603112345678".
+> > > * This is not applicable if you do not collect customer contact details on your website before checkout, have Shopify stores or use any of the no-code apps.
+> >
+> > `name` *optional*
+> > : `string` Cardholder's name to be prefilled if customer is to make card payments on Checkout. For example, **Siti Aisyah**.
+> >
+> > `email` *optional*
+> > : `string` Email address of the customer.
+> >
+> > `contact` *optional*
+> > : `string` Phone number of the customer. The expected format of the phone number is `+ {country code}{phone number}`. If the country code is not specified, `60` will be used as the default value. This is particularly important while prefilling `contact` of customers with phone numbers issued outside Malaysia. **Examples**:
+> >
+> > * +14155552671 (a valid non-Malaysian number)
+> > * +603112345678 (a valid Malaysian number). \
+> >   If 1113455567 is entered without the country code, `+60` is added to it as +601113455567.
+> >
+> > `method` *optional*
+> > : `string` Pre-selection of the payment method for the customer. Will only work if `contact` and `email` are also prefilled. \
+> > &#x20;Possible value is `card`.
+> >
+> > `notes` *optional*
+> > : `object` Set of key-value pairs that can be used to store additional information about the payment. It can hold a maximum of 15 key-value pairs, each 256 characters long (maximum).
+> >
+> > `theme`
+> > : `object` Thematic options to modify the appearance of Checkout.
+> >
+> > `color` *optional*
+> > : `string` Enter your brand colour's HEX code to alter the text, payment method icons and CTA (call-to-action) button colour of the Checkout form.
+> >
+> > `backdrop_color` *optional*
+> > : `string` Enter a HEX code to change the Checkout's backdrop colour.
+> >
+> > `modal`
+> > : `object` Options to handle the Checkout modal.
+> >
+> > `backdropclose` *optional*
+> > : `boolean` Indicates whether clicking the translucent blank space outside the Checkout form should close the form. Possible values:
+> >
+> > * `true`: Closes the form when your customer clicks outside the checkout form.
+> > * `false` (default): Does not close the form when customer clicks outside the checkout form.
+> >
+> > `escape` *optional*
+> > : `boolean` Indicates whether pressing the **escape** key should close the Checkout form. Possible values:
+> >
+> > * `true` (default): Closes the form when the customer presses the **escape** key.
+> > * `false`: Does not close the form when the customer presses the **escape** key.
+> >
+> > `handleback` *optional*
+> > : `boolean` Determines whether Checkout must behave similar to the browser when back button is pressed. Possible values:
+> >
+> > * `true` (default): Checkout behaves similarly to the browser. That is, when the browser's back button is pressed, the Checkout also simulates a back press. This happens as long as the Checkout modal is open.
+> > * `false`: Checkout does not simulate a back press when browser's back button is pressed.
+> >
+> > `confirm_close` *optional*
+> > : `boolean` Determines whether a confirmation dialog box should be shown if customers attempts to close Checkout. Possible values:
+> >
+> > * `true`: Confirmation dialog box is shown.
+> > * `false` (default): Confirmation dialog box is not shown.
+> >
+> > `ondismiss` *optional*
+> > : `function` Used to track the status of Checkout. You can pass a modal object with `ondismiss: function()\{\}` as options. This function is called when the modal is closed by the user. If `retry` is `false`, the `ondismiss` function is triggered when checkout closes, even after a failure.
+> >
+> > `animation` *optional*
+> > : `boolean` Shows an animation before loading of Checkout. Possible values:
+> >
+> > * `true`(default): Animation appears.
+> > * `false`: Animation does not appear.
+> >
+> > `subscription_id` *optional*
+> > : `string` If you are accepting recurring payments using Razorpay Curlec Checkout, you should pass the relevant `subscription_id` to the Checkout. Know more about Subscriptions on Checkout.
+> >
+> > `subscription_card_change` *optional*
+> > : `boolean` Permit or restrict customer from changing the card linked to the subscription. You can also do this from the [hosted page](https://razorpay.com/docs/my/payments/subscriptions/payment-retries.md#update-payment-method-on-our-hosted-page). Possible values:
+> >
+> > * `true`: Allow the customer to change the card from Checkout.
+> > * `false` (default): Do not allow the customer to change the card from Checkout.
+> >
+> > `callback_url` *optional*
+> > : `string` Customers will be redirected to this URL on successful payment. Ensure that the domain of the Callback URL is allowlisted. This parameter is mandatory for FPX payments.
+> >
+> > `redirect` *optional*
+> > : `boolean` Determines whether to post a response to the event handler post payment completion or redirect to Callback URL. `callback_url` and `redirect` parameters are mandatory for FPX payments. Possible values:
+> >
+> > * `true`: Customer is redirected to the specified callback URL in case of payment failure. For FPX payments, the `redirect` parameter should always be sent as `true`.
+> > * `false` (default): Customer is shown the Checkout popup to retry the payment.
+> >
+> > `customer_id` *optional*
+> > : `string` Unique identifier of customer.
+> >
+> > `remember_customer` *optional*
+> > : `boolean` Determines whether to allow saving of cards. Can also be configured via the Dashboard. Possible values:
+> >
+> > * `true`: Enables card saving feature.
+> > * `false` (default): Disables card saving feature.
+> >
+> > `timeout` *optional*
+> > : `integer` Sets a timeout on Checkout, in seconds. After the specified time limit, the customer will not be able to use Checkout.
+> >
+> > > [!WARNING]
+> > >
+> > > **Watch Out!**
+> > >
+> > > Some browsers may pause `JavaScript` timers when the user switches tabs, especially in power saver mode. This can cause the checkout session to stay active beyond the set timeout duration.
+> >
+> > `readonly`
+> > : `object` Marks fields as read-only.
+> >
+> > `contact` *optional*
+> > : `boolean` Used to set the `contact` field as readonly. Possible values:
+> >
+> > * `true`: Customer will not be able to edit this field.
+> > * `false` (default): Customer will be able to edit this field.
+> >
+> > `email` *optional*
+> > : `boolean` Used to set the `email` field as readonly. Possible values:
+> >
+> > * `true`: Customer will not be able to edit this field.
+> > * `false` (default): Customer will be able to edit this field.
+> >
+> > `name` *optional*
+> > : `boolean` Used to set the `name` field as readonly. Possible values:
+> >
+> > * `true`: Customer will not be able to edit this field.
+> > * `false` (default): Customer will be able to edit this field.
+> >
+> > `hidden`
+> > : `object` Hides the contact details.
+> >
+> > `contact` *optional*
+> > : `boolean` Used to set the `contact` field as optional. Possible values:
+> >
+> > * `true`: Customer will not be able to view this field.
+> > * `false` (default): Customer will be able to view this field.
+> >
+> > `email` *optional*
+> > : `boolean` Used to set the `email` field as optional. Possible values:
+> >
+> > * `true`: Customer will not be able to view this field.
+> > * `false` (default): Customer will be able to view this field.
+> >
+> > `send_sms_hash` *optional*
+> > : `boolean` Used to auto-read OTP for cards. Applicable from Android SDK version 1.5.9 and above. Possible values:
+> >
+> > * `true`: OTP is auto-read.
+> > * `false` (default): OTP is not auto-read.
+> >
+> > `allow_rotation` *optional*
+> > : `boolean` Used to rotate payment page as per screen orientation. Applicable from Android SDK version 1.6.4 and above. Possible values:
+> >
+> > * `true`: Payment page can be rotated.
+> > * `false` (default): Payment page cannot be rotated.
+> >
+> > `config` *optional*
+> > : `object` Parameters that enable checkout configuration. Know more about how to [configure payment methods on Razorpay Curlec standard checkout](https://razorpay.com/docs/my/payments/payment-gateway/web-integration/standard/configure-payment-methods.md).
+> >
+> > `display`
+> > : `object` Child parameter that enables configuration of checkout display language.
+> >
+> > `language`
+> > : `string` The language in which checkout should be displayed. Possible value is `en`: English.
+
+> [accordion] 7 Store Fields in Your Server
+>
+> A successful payment returns the following fields to the Checkout form.
+>
+> > [accordion] Success Callback
+> >
+> > * You need to store these fields in your server.
+> > * You can confirm the authenticity of these details by verifying the signature in the next step.
+> >
+> > ```json Success Callback theme={null}
+> > {
+> >   "razorpay_payment_id": "pay_29QQoUBi66xm2f",
+> >   "razorpay_order_id": "order_9A33XWu170gUtm",
+> >   "razorpay_signature": "9ef4dffbfd84f1318f6739a3ce19f9d85851857ae648f114332d8401e0949a3d"
+> > }
+> > ```
+> >
+> > `razorpay_payment_id`
+> > : `string` Unique identifier for the payment returned by Checkout **only** for successful payments.
+> >
+> > `razorpay_order_id`
+> > : `string` Unique identifier for the order returned by Checkout.
+> >
+> > `razorpay_signature`
+> > : `string` Signature returned by the Checkout. This is used to verify the payment.
+
+> [accordion] 8 Verify Payment Signature
+>
+> This is a mandatory step to confirm the authenticity of the details returned to the Checkout form for successful payments.
+>
+> > [accordion] To verify the `razorpay_signature` returned to you by the Checkout form:
+> >
+> > 1. Create a signature in your server using the following attributes:
+> >    * `order_id`: Retrieve the `order_id` from your server. Do not use the `razorpay_order_id` returned by Checkout.
+> >    * `razorpay_payment_id`: Returned by Checkout.
+> >    * `key_secret`: Available in your server. The `key_secret` that was generated from the [Dashboard](https://razorpay.com/docs/my/payments/dashboard/account-settings/api-keys.md#generate-api-keys).
+> > 2. Use the SHA256 algorithm, the `razorpay_payment_id` and the `order_id` to construct a HMAC hex digest as shown below:
+> >
+> > ```html HMAC Hex Digest theme={null}
+> > generated_signature = hmac_sha256(order_id + "|" + razorpay_payment_id, secret);
+> >
+> >   if (generated_signature == razorpay_signature) {
+> >     payment is successful
+> >   }
+> > ```
+> >
+> > 3. If the signature you generate on your server matches the `razorpay_signature` returned to you by the Checkout form, the payment received is from an authentic source.
+>
+> > [accordion] Generate Signature on Your Server
+> >
+> > Given below is the sample code for payment signature verification:
+> >
+> > ```java Java theme={null}
+> > RazorpayClient razorpay = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+> >
+> > String secret = "EnLs21M47BllR3X8PSFtjtbd";
+> >
+> > JSONObject options = new JSONObject();
+> > options.put("razorpay_order_id", "order_IEIaMR65cu6nz3");
+> > options.put("razorpay_payment_id", "pay_IH4NVgf4Dreq1l");
+> > options.put("razorpay_signature", "0d4e745a1838664ad6c9c9902212a32d627d68e917290b0ad5f08ff4561bc50f");
+> >
+> > boolean status =  Utils.verifyPaymentSignature(options, secret);
+> > ```
+> >
+> > ```php PHP theme={null}
+> > $api = new Api($key_id, $secret);
+> >
+> > $api->utility->verifyPaymentSignature(array('razorpay_order_id' => $razorpayOrderId, 'razorpay_payment_id' => $razorpayPaymentId, 'razorpay_signature' => $razorpaySignature));
+> > ```
+> >
+> > ```ruby Ruby theme={null}
+> > require "razorpay"
+> > Razorpay.setup('YOUR_KEY_ID', 'YOUR_SECRET')
+> >
+> > payment_response = {
+> >        razorpay_order_id: 'order_IEIaMR65cu6nz3',
+> >        razorpay_payment_id: 'pay_IH4NVgf4Dreq1l',
+> >        razorpay_signature: '0d4e745a1838664ad6c9c9902212a32d627d68e917290b0ad5f08ff4561bc50f'
+> >      }
+> > Razorpay::Utility.verify_payment_signature(payment_response)
+> > ```
+> >
+> > ```python Python theme={null}
+> > import razorpay
+> > client = razorpay.Client(auth=("YOUR_ID", "YOUR_SECRET"))
+> >
+> > client.utility.verify_payment_signature({
+> >   'razorpay_order_id': razorpay_order_id,
+> >   'razorpay_payment_id': razorpay_payment_id,
+> >   'razorpay_signature': razorpay_signature
+> >   })
+> > ```
+> >
+> > ```c .NET theme={null}
+> > RazorpayClient client = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+> >
+> > Dictionary<string, string> options = new Dictionary<string, string>();
+> > options.Add("razorpay_order_id", "order_IEIaMR65");
+> > options.Add("razorpay_payment_id", "pay_IH4NVgf4Dreq1l");
+> > options.Add("razorpay_signature", "0d4e745a1838664ad6c9c9902212a32d627d68e917290b0ad5f08ff4561bc50");
+> >
+> > Utils.verifyPaymentSignature(options);
+> > ```
+> >
+> > ```javascript Node.js theme={null}
+> > var instance = new Razorpay({ key_id: 'YOUR_KEY_ID', key_secret: 'YOUR_SECRET' })
+> >
+> > var { validatePaymentVerification, validateWebhookSignature } = require('./dist/utils/razorpay-utils');
+> > validatePaymentVerification({"order_id": razorpayOrderId, "payment_id": razorpayPaymentId }, signature, secret);
+> > ```
+> >
+> > ```go Go theme={null}
+> > import ( razorpay "github.com/razorpay/razorpay-go" )
+> > client := razorpay.NewClient("YOUR_KEY_ID", "YOUR_SECRET")
+> >
+> > params := map[string]interface{}{
+> >  "razorpay_order_id": "order_IEIaMR65cu6nz3",
+> >  "razorpay_payment_id": "pay_IH4NVgf4Dreq1l",
+> > }
+> >
+> > signature := "0d4e745a1838664ad6c9c9902212a32d627d68e917290b0ad5f08ff4561bc50f";
+> > secret := "EnLs21M47BllR3X8PSFtjtbd";
+> > utils.VerifyPaymentSignature(params, signature, secret)
+> > ```
+>
+> > [accordion] Post Signature Verification
+> >
+> > After you have completed the integration, you can [set up webhooks](https://razorpay.com/docs/my/webhooks/setup-edit-payments.md), make test payments, replace the test key with the live key and integrate with other [APIs](https://razorpay.com/docs/my/api).
+>
+> > [accordion] M1 MacBook Changes
+> >
+> > If you use M1 MacBook, you need to make the following changes in your podfile.
+> >
+> > > [!NOTE]
+> > >
+> > > **Handy Tips**
+> > >
+> > > Add the following code inside `post_install do |installer|`.
+> >
+> > ```javascript podfile theme={null}
+> > 				 installer.pods_project.build_configurations.each do |config|
+> > 				 config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+> > 				 end
+> > ```
+
+## 2. Test Integration
+
+After the integration is complete, a **Pay** button appears on your webpage/app.
+
+Click the button and make a test transaction to ensure the integration is working as expected. You can start accepting actual payments from your customers once the test transaction is successful.
+
+> [!WARNING]
+>
+> **Watch Out!**
+>
+> This is a mock payment page that uses your test API keys, test card and payment details.
+>
+> * Ensure you have entered only your [Test Mode API keys](https://razorpay.com/docs/my/payments/dashboard/account-settings/api-keys.md#generate-api-keys) in the Checkout code.
+> * Test mode features a mock bank page with **Success** and **Failure** buttons to replicate the live payment experience.
+> * No real money is deducted due to the usage of test API keys. This is a simulated transaction.
+
+Following are all the payment modes that the customer can use to complete the payment on the Checkout. Some of them are available by default, while others may require approval from us. Raise a request from the Dashboard to enable such payment methods.
+
+| Payment Method | Code | Availability |
+| - | - | - |
+| Debit and Credit Cards | `card` | ✓ |
+| FPX | `fpx` | ✓ |
+| [DuitNow Pay](https://razorpay.com/docs/my/payments/payment-methods/duitnow/pay.md) | — | Early access. Live mode only; not available in test mode. |
+| Wallets | `wallet` | ✓ |
+
+You can make test payments using one of the payment methods configured at the Checkout.
+
+> [accordion] FPX
+>
+> You can select any of the listed banks. After choosing a bank, Razorpay Curlec will redirect to a mock page where you can make the payment a `success` or a `failure`. Since this is Test Mode, we will not redirect you to the bank login portals.
+
+> [accordion] Wallet
+>
+> You can select any of the listed wallets. After choosing a wallet, you will be redirected to a mock page where you can make the payment `success` or a `failure`. Since this is Test Mode, we will not redirect you to the wallet login portals.
+>
+> > [!WARNING]
+> >
+> > **Watch Out!**
+> >
+> > iOS integration for Touch'n Go wallet is currently unavailable. We will be adding support for it soon.
+
+> [accordion] Cards
+>
+> You can use one of the following test cards to test transactions for your integration in Test Mode.
+>
+> | Card Network | Card Number | CVV & Expiry Date |
+> | - | - | - |
+> | Mastercard | 5272 0088 0623 5704 | Use a random CVV and any future date ^^ |
+> | Visa | 4842 7930 0208 6571 | |
+>
+> Check the following lists:
+>
+> * [Cards Error Codes](https://razorpay.com/docs/my/errors/payments/cards.md).
+
+## 3. Go-live Checklist
+
+Check the go-live checklist for Razorpay Curlec React Native iOS integration. Consider these steps before taking the integration live.
+
+> [accordion] 1 Accept Live Payments
+>
+> Perform an end-to-end simulation of funds flow in the Test Mode. Once confident that the integration is working as expected, switch to the Live Mode and start accepting payments from customers.
+>
+> > [!WARNING]
+> >
+> > **Watch Out!**
+> >
+> > Ensure you are switching your test API keys with API keys generated in Live Mode.
+>
+> To generate API Keys in Live Mode on your Razorpay Curlec Dashboard:
+>
+> 1. Log in to the Razorpay Curlec Dashboard and switch to **Live Mode** on the menu.
+> 2. Navigate to **Account & Settings** → **API Keys** → **Generate Key** to generate the API Key for Live Mode.
+> 3. Download the keys and save them securely.
+> 4. Replace the Test API Key with the Live Key in the Checkout code and start accepting actual payments.
+
+> [accordion] 2 Payment Capture
+>
+> After payment is `authorized`, you need to capture it to settle the amount to your bank account as per the settlement schedule. Payments that are not captured are auto-refunded after a fixed time.
+>
+> > [!WARNING]
+> >
+> > **Watch Out**
+> >
+> > * You should deliver the products or services to your customers only after the payment is captured. Razorpay Curlec automatically refunds all the uncaptured payments.
+> > * You can track the payment status using our [Fetch a Payment API](https://razorpay.com/docs/my/api/payments/fetch-with-id.md) or webhooks.
+>
+> > [tab] Auto-capture Payments (Recommended)
+> >
+> > Authorized payments can be automatically captured. You can auto-capture all payments [using global settings](https://razorpay.com/docs/my/payments/payments/capture-settings.md#auto-capture-all-payments) on the Razorpay Curlec Dashboard. Know more about [capture settings for payments](https://razorpay.com/docs/my/payments/payments/capture-settings.md).
+> >
+> > > [!WARNING]
+> > >
+> > > **Watch Out!**
+> > >
+> > > Payment capture settings work only if you have integrated with Orders API on your server side. Know more about the [Orders API](https://razorpay.com/docs/my/api/orders/create.md).
+>
+> > [tab] Manually Capture Payments
+> >
+> > Each authorized payment can also be captured individually. You can manually capture payments using [Payment Capture API](https://razorpay.com/docs/my/api/payments/capture.md) or [Dashboard](https://razorpay.com/docs/my/payments/payments/dashboard.md#manually-capture-payments). Know more about [capture settings for payments](https://razorpay.com/docs/my/payments/payments/capture-settings.md).
+
+> [accordion] 3 Set Up Webhooks
+>
+> Ensure you have [set up webhooks](https://razorpay.com/docs/my/webhooks/setup-edit-payments.md) in the live mode and configured the events for which you want to receive notifications.
+>
+> > [!WARNING]
+> >
+> > **Implementation Considerations**
+> >
+> > Webhooks are the primary and most efficient method for event notifications. They are delivered asynchronously in near real-time. For critical user-facing flows that need instant confirmation (like showing "Payment Successful" immediately), supplement webhooks with API verification.
+> >
+> > **Recommended approach** \\
+> >
+> > * Rely on webhooks for all automation, which can be asynchronous.
+> > * If a critical user-facing flow requires instant status, but the webhook notification has not arrived within the time mandated by your business needs, perform an immediate API Fetch call ([Payments](https://razorpay.com/docs/my/api/payments/fetch-with-id.md), [Orders](https://razorpay.com/docs/my/api/orders/fetch-with-id.md) and [Refunds](https://razorpay.com/docs/my/api/refunds/fetch-specific-refund-payment.md)) to verify the status.

@@ -1,0 +1,81 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Troubleshooting & FAQs
+
+> Troubleshoot common errors and find answers to frequently asked questions about Gravity Forms Ecommerce Plugin integration.
+
+Available in
+🇮🇳 India
+🇲🇾 Malaysia
+🇸🇬 Singapore
+
+> [accordion] My Webhooks are not auto-configured since I am not using the upgraded version of Gravity Forms. How do I manually configure webhooks?
+>
+> To set up webhooks:
+>
+> 1. Log in to the Razorpay Curlec Dashboard and navigate to **Account & Settings**.
+>
+> 2. In the **Website and app settings** section, click **Webhooks**.
+>
+> 3. Click **+ Add New Webhook**.
+>
+> 4. In the **Webhook Setup** pop-up page:
+>    1. Enter the **URL** where you want to receive the webhook payload when an event is triggered. We recommended using an HTTPS URL.
+>
+> > [!NOTE]
+> >
+> > **Handy Tips**
+> >
+> > You can set up to **10 URLs** to receive Webhook notifications. Webhooks can only be delivered to public URLs. If you attempt to save a localhost endpoint as part of a webhook setup, you will notice an error. Know more about [testing Webhooks on an application running on localhost](https://razorpay.com/docs/my/webhooks/validate-test.md#application-running-on-localhost).
+>
+> 1. Enter a **Secret** for the webhook endpoint. The secret is used to validate that the webhook is from Razorpay Curlec. Do not expose the secret publicly. Know more about [how to validate webhooks](https://razorpay.com/docs/my/webhooks/validate-test.md).
+>
+> > [!NOTE]
+> >
+> > **Handy Tips**
+> >
+> > * When setting up the webhook, you will be asked to specify a secret. Using this secret, you can validate that the webhook is from Razorpay Curlec. Entering the secret is optional but recommended. The secret should never be exposed publicly.
+> > * The webhook secret does not need to be the merchant secret key provided by Razorpay Curlec.
+>
+> 1. In the **Alert Email** field, enter the email address to which the notifications should be sent in case of webhook failure. You will receive webhook deactivation notifications to this email address.
+>
+> 2. Select the required events from the list of **Active Events**.
+>
+> 3. Click **Create Webhook**.
+>
+> 4. After you set up a webhook, it appears on the list of webhooks. \\
+
+> [accordion] How can I verify if webhooks are enabled?
+>
+> To verify if webhooks are enabled:
+>
+> 1. Log in to the Razorpay Curlec Dashboard and navigate to **Account & Settings**.
+>
+> 2. In the **Website and app settings**, click **Webhooks**.
+>
+> 3. Select the relevant webhook **URL**.
+>
+> 4. On the right panel, check if the status for `payment.authorized`, `refund.created` and `virtual_account.credited` is enabled.
+
+> [accordion] What troubleshooting procedures should be carried out prior to initiating a support ticket?
+>
+> Follow the troubleshooting steps given below:
+>
+> 1. Reinstall the Razorpay for Gravity Forms plugin.
+> 2. We recommend you to keep your WordPress and Razorpay for Gravity Forms plugins up to date. You can find the latest versions [here](https://github.com/razorpay/razorpay-gravity-forms/releases).
+> 3. Ensure your current theme is compatible with the Razorpay for Gravity Forms plugin. If not, switch to the default WordPress theme and provide us with the name of your current theme.
+> 4. If the issue persists after following these steps, contact our [Support team](https://curlec.com/support/). Provide the following information while creating a ticket:
+>    * WordPress version
+>    * Gravity Forms version
+>    * Razorpay for Gravity Forms plugin version
+>    * PHP version
+>    * WordPress theme
+>    * Steps to reproduce the issue (Screen recording/Screenshots)
+>    * Error logs, if any
+>    * Staging website credentials (login URL, login id, and password)
+
+> [accordion] Does the Gravity Forms plugin support 3 or 0 decimal unit currencies?
+>
+> The Gravity Forms plugin currently supports only currencies that use 2 decimal units. For example: USD, EUR, INR. It does not support currencies with 0 decimal (for example, JPY) or 3 decimal units (for example, BHD).

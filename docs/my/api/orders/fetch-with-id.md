@@ -1,0 +1,221 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Fetch an Order With ID
+
+> Fetches an Order with its id using the Razorpay Curlec Orders API.
+
+Available in
+🇮🇳 India
+🇲🇾 Malaysia
+🇸🇬 Singapore
+🇺🇸 United States
+
+Use this endpoint to retrieve details of a particular order as per the id.
+
+```bash Curl theme={null}
+curl -u [YOUR_KEY_ID]:[YOUR_KEY_SECRET]\
+-X GET https://api.razorpay.com/v1/orders/order_DaaS6LOUAASb7Y \
+```
+
+```java Java theme={null}
+RazorpayClient razorpay = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+
+String orderId = "order_DaaS6LOUAASb7Y";
+
+Order order = razorpay.orders.fetch(orderId);
+```
+
+```python Python theme={null}
+# do easy_install razorpay or
+#    pip install razorpay
+
+import razorpay
+client = razorpay.Client(auth=("YOUR_ID", "YOUR_SECRET"))
+
+client.order.fetch(orderId)
+```
+
+```php PHP theme={null}
+$api = new Api($key_id, $secret);
+
+$api->order->fetch($orderId);
+```
+
+```ruby Ruby theme={null}
+require "razorpay"
+Razorpay.setup('YOUR_KEY_ID', 'YOUR_SECRET')
+
+orderId = "order_DaaS6LOUAASb7Y"
+
+Razorpay::Order.fetch(orderId)
+```
+
+```javascript Node.js theme={null}
+var instance = new Razorpay({ key_id: 'YOUR_KEY_ID', key_secret: 'YOUR_SECRET' })
+
+instance.orders.fetch(orderId)
+```
+
+```go Go theme={null}
+import ( razorpay "github.com/razorpay/razorpay-go" )
+client := razorpay.NewClient("YOUR_KEY_ID", "YOUR_SECRET")
+
+body, err := client.Order.Fetch("<orderId>", nil, nil)
+```
+
+```csharp .NET theme={null}
+RazorpayClient client = new RazorpayClient("[YOUR_KEY_ID]", "[YOUR_KEY_SECRET]");
+
+string orderId = "order_Z6t7VFTb9xHeOs";
+
+Order order = client.Order.Fetch(orderId);
+```
+
+```bash CLI theme={null}
+razorpay orders fetch ord_ABC123
+```
+
+```json Success theme={null}
+{
+    "id": "order_DaaS6LOUAASb7Y",
+    "entity": "order",
+    "amount": 2000,
+    "amount_paid": 0,
+    "amount_due": 2000,
+    "currency": "MYR",
+    "receipt": null,
+    "offer_id": "offer_JGQvQtvJmVDRIA",
+    "offers": [
+        "offer_JGQvQtvJmVDRIA"
+    ],
+    "status": "created",
+    "attempts": 0,
+    "notes": [],
+    "created_at": 1654776878
+}
+```
+
+```json Failure theme={null}
+{
+    "error": {
+        "code": "BAD_REQUEST_ERROR",
+        "description": "The id provided does not exist",
+        "source": "business",
+        "step": "payment_initiation",
+        "reason": "input_validation_failed",
+        "metadata": {}
+    }
+}
+```
+
+## Path Parameters
+
+**id** `string` *required*
+
+Unique identifier of the order to be retrieved.
+
+## Response Parameters
+
+**id** `string`
+
+The unique identifier of the order.
+
+**amount** `integer`
+
+The amount for which the order was created, in currency subunits. For example, for an amount of , enter `29500`.
+
+**entity** `string`
+
+Name of the entity. Here, it is `order`.
+
+**amount\_paid** `integer`
+
+The amount paid against the order.
+
+**amount\_due** `integer`
+
+The amount pending against the order.
+
+**currency** `string`
+
+ISO code for the currency in which you want to accept the payment. The default length is 3 characters. Refer to the [list of supported currencies](https://razorpay.com/docs/my/payments/international-payments#malaysian-businesses).
+
+**receipt** `string`
+
+Receipt number that corresponds to this order. Can have a maximum length of 40 characters and has to be unique.
+
+**status** `string`
+
+The status of the order. Possible values:
+
+* `created`: When you create an order it is in the `created` state. It stays in this state till a payment is attempted on it.
+* `attempted`: An order moves from `created` to `attempted` state when a payment is first attempted on it. It remains in the `attempted` state till one payment associated with that order is captured.
+* `paid`: After the successful capture of the payment, the order moves to the `paid` state. No further payment requests are permitted once the order moves to the `paid` state. The order stays in the `paid` state even if the payment associated with the order is refunded.
+
+**attempts** `integer`
+
+The number of payment attempts, successful and failed, that have been made against this order.
+
+**notes** `json object`
+
+Key-value pair that can be used to store additional information about the entity. Maximum 15 key-value pairs, 256 characters (maximum) each. For example, `"note_key": "Beam me up Scotty”`.
+
+**created\_at** `integer`
+
+Indicates the Unix timestamp when this order was created.
+
+**checkout** `object`
+
+Checkout configuration applied to this order, when the order was created with checkout-time options (theme, prefill, partial-payment settings).
+
+**description** `string`
+
+A brief description of the order, used for display purposes.
+
+**offers** `array`
+
+List of offer IDs (`offer_xxxx`) applied to this order, if any.
+
+**offer\_id** `string`
+
+Unique identifier of the offer associated with this order.
+
+## Errors
+
+> [accordion] The API `\<key/secret\>
+> ` provided is invalid.
+>
+> **Code:** `400`
+>
+> The API credentials passed in the API call differ from the ones generated on the Dashboard. Possible reasons:
+>
+> * Different keys for test mode and live modes.
+> * Expired API key.
+>
+> **Solution:** The API keys must be active and entered correctly with no whitespace before or after the keys.
+
+> [accordion] id is not a valid id.
+>
+> **Code:** `400`
+>
+> The `order_id` passed is invalid.
+>
+> **Solution:** Use a valid `order_id`.
+
+> [accordion] The id provided does not exist
+>
+> **Code:** `400`
+>
+> The `order_id` does not exist or does not belong to the requestor.
+>
+> **Solution:** Ensure that you use a valid `order_id` that belongs to the requestor.
+
+> [accordion] Order older than 180 days, please use reports.
+>
+> **Code:** `400`
+>
+> The order being fetched was created more than 180 days ago. The live Orders API only retains recent orders for direct fetch.
+>
+> **Solution:** For orders older than 180 days, use the **Reports / Settlements export** from the Dashboard rather than the live API.

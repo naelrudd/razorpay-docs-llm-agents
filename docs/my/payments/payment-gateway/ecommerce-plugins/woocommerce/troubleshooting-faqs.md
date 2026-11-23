@@ -1,0 +1,264 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Troubleshooting & FAQs
+
+> Troubleshoot common errors and find answers to frequently asked questions about WooCommerce Ecommerce Plugin integration.
+
+Available in
+🇮🇳 India
+🇲🇾 Malaysia
+🇸🇬 Singapore
+🇺🇸 United States
+
+> [accordion] How are webhooks auto-configured?
+>
+> * Auto-webhook support is available for Razorpay Woocommerce Plugin from v3.5.0 onwards.
+> * Once you save the changes on the Woocommerce Dashboard, webhooks are auto configured for events: `payment.authorized` and `refund.created`. You do not have to configure it on the Dashboard.
+>
+> To set up webhooks:
+>
+> 1. In the WordPress Dashboard, click **WooCommerce** and navigate to **Settings**.
+> 2. In the **Payments** tab, enter the **Key ID** and **Key Secret**.
+>
+>    ![Enter key id and secret](https://razorpay.com/docs/build/browser/assets/images/plugin-wooc-key-id-secret.jpg)
+> 3. Click **Save Changes**.
+>
+>    ![Save changes for auto webhook generation](https://razorpay.com/docs/build/browser/assets/images/plugin-wooc-save.jpg)
+
+> [accordion] My webhooks are not auto-configured since I am not using the upgraded version of the  WooCommerce plugin. How do I manually configure webhooks?
+>
+> If you are not using the upgraded version of Razorpay WooCommerce plugin, you can manually configure the following events:
+>
+> * `payment.authorized`
+> * `payment.pending`
+> * `refund.created`
+> * `virtual_account.credited`
+> * `subscription.cancelled`
+> * `subscription.paused`
+> * `subscription.resumed`
+>
+> To set up webhooks manually:
+>
+> 1. Log in to the Razorpay Curlec Dashboard and navigate to **Account & Settings**.
+>
+> 2. In the **Website and app settings** section, click **Webhooks**.
+>
+> 3. Click **+ Add New Webhook**.
+>
+> 4. In the **Webhook Setup** pop-up page:
+>    1. Enter the **URL** where you want to receive the webhook payload when an event is triggered. We recommend using an HTTPS URL.
+>
+> > [!NOTE]
+> >
+> > **Handy Tips**
+> >
+> > You can set up to **30 URLs** to receive Webhook notifications. Webhooks can only be delivered to public URLs. If you attempt to save a localhost endpoint as part of a webhook setup, you will notice an error. Know more about [testing Webhooks on an application running on localhost](https://razorpay.com/docs/my/webhooks/validate-test.md#application-running-on-localhost).
+>
+> 2. Enter a **Secret** for the webhook endpoint. The secret is used to validate that the webhook is from Razorpay Curlec. Do not expose the secret publicly. Know more about [how to validate webhooks](https://razorpay.com/docs/my/webhooks/validate-test.md).
+>
+> > [!NOTE]
+> >
+> > **Handy Tips**
+> >
+> > * When setting up the webhook, you will be asked to specify a secret. Using this secret, you can validate that the webhook is from Razorpay Curlec. Entering the secret is optional but recommended. The secret should never be exposed publicly.
+> > * The webhook secret does not need to be the merchant secret key provided by Razorpay Curlec.
+>
+> 3. In the **Alert Email** field, enter the email address to which the notifications should be sent in case of webhook failure. You will receive webhook deactivation notifications to this email address.
+>
+> 4. Select the required events from the list of **Active Events**.
+>
+> 5. Click **Create Webhook**. After you set a webhook, it appears on the list of webhooks.
+>
+> 6. You can select the webhook and click **Edit** to make more changes.
+
+> [accordion] How can I verify if webhooks are auto-configured?
+>
+> To verify if webhooks are enabled:
+>
+> 1. Log in to the Razorpay Curlec Dashboard and navigate to **Account & Settings**.
+>
+> 2. In the **Website and app settings** section, click **Webhooks**.
+>
+> 3. Select the relevant webhook **URL**.
+>
+> 4. On the right panel, check if the status for `payment.authorized` and `refund.created` is enabled.
+
+> [accordion] Can I make partial payments using WooCommerce?
+>
+> No, partial payments are not supported on WooCommerce. You can either choose to deduct the full amount or make two separate orders and the customer will have to pay twice for it.
+
+> [accordion] I am getting the following error message "RAZORPAY ERROR: Order creation failed with the message: The API key provided is invalid". Why?
+>
+> Verify and confirm that the API keys you have provided within WordPress are accurate. If the issue persists, contact our [Support team](https://curlec.com/support/).
+
+> [accordion] I am getting the following php error in the  plugin:"PHP message: ORDER NUMBER 57999:webhook conflict over for razorpay order: order\_LWVB71vGYh7nEr". Why?
+>
+> The message in the logs is not an error, it is a logged message. This message appears only when a webhook callback takes longer than 5 minutes to process. Our webhook mechanism includes a 5-minute waiting period to prevent the occurrence of duplicate orders.
+
+> [accordion] Why am I getting the error message: "RAZORPAY ERROR: Order creation failed with the message "Authentication failed"."?
+>
+> "Authentication failed" error occurs when there is a discrepancy between the API keys. Verify the API key provided for your website and ensure that it matches with the key generated via Dashboard.
+
+> [accordion] I am getting the following error in WordPress: "Required parameter $razorpayPaymentId follows optional parameter $amount in /home/xxxcustom/public\_html/wp-content/plugins/woo-razorpay/woo-razorpay.php on line 1353". Why?
+>
+> Follow the steps given below to resolve the issue:
+>
+> 1. Deactivate and delete the Razorpay WooCommerce plugin from your [WordPress Dashboard](https://wordpress.com/log-in).
+> 2. Reinstall the [Razorpay WooCommerce plugin](https://wordpress.org/plugins/woo-razorpay/).
+> 3. For easy integration journey, watch the [Razorpay WooCommerce Integration tutorial](https://www.youtube.com/watch?v=p2YMdxZMyxQ).
+
+> [accordion] I am getting the following error: "Plugin could not be activated because it triggered a fatal error.
+> Parse error: syntax error, unexpected 'int' (T\_STRING), expecting function (T\_FUNCTION) or const (T\_CONST) in /home4/yutihbjy/public\_html/wp-content/plugins/woo-razorpay/includes/cron/one-click-checkout/one-cc-address-sync.php on line 12"
+>
+> If you encounter this error message while trying to activate the Razorpay for WooCommerce plugin, follow the steps given below to resolve the issue:
+>
+> 1. Uninstall the Razorpay for WooCommerce plugin from your WordPress Dashboard. Ensure you delete the plugin entirely, not just deactivate it.
+> 2. Remove the WooCommerce webhook associated with Razorpay Curlec from the Dashboard. Know how to [delete a webhook](https://razorpay.com/docs/my/webhooks/setup-edit-payments.md#delete-a-webhook).
+> 3. After removing both the plugin and the webhook, install the latest version of the [Razorpay for WooCommerce plugin](https://wordpress.org/plugins/woo-razorpay/).
+>
+> If the issue persists even after following these steps, contact our [Support team](https://curlec.com/support/) with the following information:
+>
+> * WooCommerce version
+> * WordPress version
+> * Razorpay for WooCommerce plugin version
+> * A screen recording of the checkout flow (if possible)
+> * Staging site credentials (if applicable)
+> * Test Key and Secret from your Razorpay Curlec account
+
+> [accordion] Why am I getting a "404 Page Not Found" error on the checkout when I select Razorpay Curlec as a payment option?
+>
+> If you encounter this error, follow the steps given below to resolve the issue:
+>
+> 1. Log in to WordPress Dashboard, click **WooCommerce** and navigate to **Settings**.
+>
+> 2. In the **Advanced** tab, look for the **Page Setup** section. Ensure that you have correctly linked the **Cart page** and **Checkout page**.
+>
+>    ![Enter Cart page and checkout page](https://razorpay.com/docs/build/browser/assets/images/plugin-wooc-faq-pagesetup.jpg)
+>
+> 3. Validate the **Checkout Endpoints** settings:
+>
+> * For the **Pay** endpoint, set it to **order-pay**.
+> * For the **Order Received** endpoint, set it to **order-received**.
+>
+>   ![Enter pay endpoint and order endpoint](https://razorpay.com/docs/build/browser/assets/images/plugin-wooc-faq-checkout-endpoint.jpg)
+>
+> If the issue persists even after following these steps, contact our [Support team](https://curlec.com/support/).
+
+> [accordion] What troubleshooting procedures should be carried out before initiating a support ticket?
+>
+> Follow the troubleshooting steps given below:
+>
+> 1. Ensure that your system meets all the requirements mentioned [here](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce.md#supported-versions).
+> 2. We recommend you to keep your WordPress, WooCommerce, and Razorpay for WooCommerce plugins up to date. You can find the latest versions [here](https://github.com/razorpay/razorpay-woocommerce/releases).
+> 3. You can perform initial debugging. Follow the steps given below to debug:
+>    1. Deactivate all plugins except for Razorpay Curlec and WooCommerce.
+>    2. If you are using a paid theme, switch to a default WordPress theme and check if the issue persists.
+>    3. Verify if the Razorpay Curlec checkout is rendering correctly. If not, try reinstalling the Razorpay for WooCommerce plugin.
+> 4. If the issue persists after following these steps, contact our [Support team](https://curlec.com/support/). Provide the following information while creating a ticket:
+>    * WordPress version
+>    * WooCommerce version
+>    * Razorpay for WooCommerce plugin version
+>    * PHP version
+>    * WordPress theme
+>    * Steps to reproduce the issue (Screen recording/Screenshots)
+>    * Error logs, if any
+>    * Staging website credentials (login URL, login id, and password)
+
+> [accordion] How do I reconfigure webhooks for  in WooCommerce?
+>
+> To reconfigure webhooks for Razorpay Curlec in WooCommerce, follow the steps given below:
+>
+> 1. Deactivate and delete the Razorpay WooCommerce plugin from your [WordPress Dashboard](https://wordpress.com/log-in).
+> 2. Remove the WooCommerce webhook associated with Razorpay Curlec from the Dashboard. Know how to [delete a webhook](https://razorpay.com/docs/my/webhooks/setup-edit-payments.md#delete-a-webhook).
+> 3. After removing both the plugin and the webhook, install the latest version of the [Razorpay for WooCommerce plugin](https://wordpress.org/plugins/woo-razorpay/).
+
+> [accordion] How can I revert to the legacy order confirmation page on WooCommerce?
+>
+> Follow the steps given below to revert to the legacy order confirmation page:
+>
+> 1. Open the Order Confirmation template in the Site Editor by navigating to **Appearance** → **Editor** → **Templates** → **Order Confirmation**.
+>
+> 2. Open the **List View** and delete all the special Order Confirmation blocks.
+>
+> > [!NOTE]
+> >
+> > **Handy Tips**
+> >
+> > Hold shift to select multiple blocks between the current selection and the block you click.
+>
+> 3. Open the **Block Inserter**, search for **Order Confirmation Block** and add it.
+>
+>    ![woocommerce add order confirmation](https://razorpay.com/docs/build/browser/assets/images/woocommerce-order-confirmation.jpg)
+> 4. Click **Save**.
+
+> [accordion] Does  WooCommerce support High-Performance Order Storage(HPOS)?
+>
+> Yes, Razorpay WooCommerce supports High-Performance Order Storage(HPOS). It is recommended to enable this feature when there is minimal traffic in the store.
+
+> [accordion] I am getting the error: "Invalid signature passed" when I trigger the webhook. What should I do?
+>
+> If you encounter this error message, follow the below steps to troubleshoot this issue:
+>
+> 1. Uninstall the Razorpay for WooCommerce plugin from your WordPress Dashboard. Ensure you delete the plugin entirely, not just deactivate it.
+> 2. Remove the WooCommerce webhook associated with Razorpay Curlec from the Dashboard. Know how to [delete a webhook](https://razorpay.com/docs/my/webhooks/setup-edit-payments.md#delete-a-webhook).
+> 3. After removing both the plugin and the webhook, install the latest version of the [Razorpay for WooCommerce plugin](https://wordpress.org/plugins/woo-razorpay/).
+>
+> If the issue persists even after following these steps, contact our [Support team](https://curlec.com/support/).
+
+> [accordion] Does  WooCommerce support Checkout Blocks?
+>
+> Yes, Razorpay WooCommerce supports Checkout Blocks.
+
+> [accordion] Is the WooCommerce subscription plugin free?
+>
+> No, the WooCommerce subscription plugin is only available in the paid version of WooCommerce.
+
+> [accordion] Is it mandatory to set an expiry date for a subscription?
+>
+> Yes, it is mandatory. We do not support subscriptions with no expiry date on the WooCommerce plugin.
+
+> [accordion] Does the WooCommerce plugin support 3 or 0 decimal unit currencies?
+>
+> The WooCommerce plugin currently supports only currencies that use 2 decimal units. For example: USD, EUR, INR. It does not support currencies with 0 decimal (for example, JPY) or 3 decimal units (for example, BHD).
+
+> [accordion] How and where can I check the  logs in WooCommerce?
+>
+> To check the Razorpay Curlec logs on WooCommerce, follow these steps:
+>
+> 1. Go to WordPress Admin and navigate to **WooCommerce**. Click **Status**.
+>
+>    ![Woocommerce Dashboard status](https://razorpay.com/docs/build/browser/assets/images/woocommerce-status-logs.jpg)
+>
+> 2. Select **Logs**. Locate and open **razorpay-logs** to view the logs.
+>
+>    ![Razorpay Curlec logs on logs](https://razorpay.com/docs/build/browser/assets/images/razorpay-logs.jpg)
+>
+> > [!WARNING]
+> >
+> > **Watch Out!**
+> >
+> > A new log file is created every day, so be sure to check the most recent file for the latest logs.
+
+> [accordion] Why is the payment captured on  but not updated on WooCommerce for some orders?
+>
+> This issue may arise due to incorrect webhook configuration or domain allowlisting. To resolve this:
+>
+> 1. Ensure that the [webhook is configured correctly](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce/troubleshooting-faqs.md#my-webhooks-are-not-auto-configured-since-i-am-not-using-the-upgraded-version-of-the-woocommerce-plugin-how-do-i-manually-configure-webhooks) in your Razorpay Curlec Dashboard.
+> 2. After placing an order, check the [WooCommerce site logs](https://razorpay.com/docs/my/payments/payment-gateway/ecommerce-plugins/woocommerce/troubleshooting-faqs.md#how-and-where-can-i-check-the-logs-in-woocommerce) for entries such as:
+>    * `Webhook conflict due to early execution for razorpay order`
+>
+>    * `Webhook conflict over for razorpay order`
+>
+>    * `Webhook process finished the updateOrder function` \\
+>
+> If these logs are missing, the issue might occur due to domain allowlisting. To resolve this, list [Razorpay Curlec's IPs](https://razorpay.com/docs/my/security/whitelists.md#webhook-ips) in your server settings.
+
+> [accordion] My Razorpay Curlec Payment Gateway is not working properly on WooCommerce. How do I fix integration issues?
+>
+> Follow the steps given below to resolve the issue:
+>
+> 1. Deactivate and delete the Razorpay WooCommerce plugin from your [WordPress Dashboard](https://wordpress.com/log-in).
+> 2. Reinstall the [Razorpay WooCommerce plugin](https://wordpress.org/plugins/woo-razorpay/).
+> 3. For easy integration journey, watch the [Razorpay WooCommerce Integration video tutorial](https://www.youtube.com/watch?v=p2YMdxZMyxQ).

@@ -1,0 +1,272 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://razorpay.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Install the Razorpay Curlec CLI
+
+> Install the Razorpay Curlec CLI on macOS, Linux or Windows to interact with Razorpay Curlec APIs from your terminal.
+
+Available in
+🇮🇳 India
+🇲🇾 Malaysia
+🇸🇬 Singapore
+🇺🇸 United States
+
+The Razorpay Curlec CLI lets you interact with Razorpay Curlec APIs directly from your terminal. Use it to test integrations, trigger events, manage resources and automate workflows in your CI/CD pipelines. The source code is available on [GitHub](https://github.com/razorpay/razorpay-cli).
+
+To install the Razorpay Curlec CLI, you must complete the following actions:
+
+1. [Download and Install the Binary](#step-1-download-and-install-the-binary)
+2. [Configure Your API Credentials](#step-2-configure-your-api-credentials)
+
+### Step 1: Download and Install the Binary
+
+#### Quick Install (macOS and Linux)
+
+Run the install script to automatically detect your OS and architecture, download the latest binary, and install it to `~/.local/bin`:
+
+```bash Bash theme={null}
+curl -fsSL https://razorpay.com/cli/latest/install.sh | bash
+```
+
+#### Homebrew (macOS)
+
+```bash Bash theme={null}
+brew install razorpay/razorpay-cli/razorpay
+```
+
+#### Scoop (Windows)
+
+```bash PowerShell theme={null}
+scoop bucket add razorpay https://github.com/razorpay/scoop-razorpay-cli.git
+```
+
+```bash PowerShell theme={null}
+scoop install razorpay
+```
+
+Select the tab for your operating system and follow the steps.
+
+> [tab] macOS
+>
+> 1. Download the binary.
+>
+>    Download the binary that matches your CPU architecture.
+>
+> | Architecture | Download |
+> | - | - |
+> | Apple Silicon | [razorpay\_mac-os\_arm64.tar.gz](https://razorpay.com/cli/latest/razorpay_mac-os_arm64.tar.gz) |
+> | Intel | [razorpay\_mac-os\_x86\_64.tar.gz](https://razorpay.com/cli/latest/razorpay_mac-os_x86_64.tar.gz) |
+>
+> Or download using curl:
+>
+> **Apple Silicon:**
+>
+> ```bash Bash theme={null}
+> curl -fsSL https://razorpay.com/cli/latest/razorpay_mac-os_arm64.tar.gz | tar -xz
+> ```
+>
+> **Intel:**
+>
+> ```bash Bash theme={null}
+> curl -fsSL https://razorpay.com/cli/latest/razorpay_mac-os_x86_64.tar.gz | tar -xz
+> ```
+>
+> 2. Extract the archive.
+>
+> ```bash Bash theme={null}
+> tar -xvf razorpay_mac-os_<arch>.tar.gz
+> ```
+>
+> 3. Make the binary executable and remove the macOS quarantine attribute.
+>
+> ```bash Bash theme={null}
+> chmod +x ./razorpay
+> xattr -d com.apple.quarantine ./razorpay
+> ```
+>
+> 4. Move the binary to your execution path.
+>
+> ```bash Bash theme={null}
+> sudo mv razorpay /usr/local/bin/
+> ```
+>
+> 5. Verify the installation.
+>
+> ```bash Bash theme={null}
+> razorpay --version
+> ```
+
+> [tab] Linux
+>
+> 1. Download the binary.
+>
+>    Download the binary that matches your architecture and preferred package format.
+>
+> | Architecture | Format | Download |
+> | - | - | - |
+> | x86-64 | tar.gz | [razorpay\_linux\_x86\_64.tar.gz](https://razorpay.com/cli/latest/razorpay_linux_x86_64.tar.gz) |
+> | ARM64 | tar.gz | [razorpay\_linux\_arm64.tar.gz](https://razorpay.com/cli/latest/razorpay_linux_arm64.tar.gz) |
+> | x86-64 | deb | [razorpay\_linux\_amd64.deb](https://razorpay.com/cli/latest/razorpay_linux_amd64.deb) |
+> | ARM64 | deb | [razorpay\_linux\_arm64.deb](https://razorpay.com/cli/latest/razorpay_linux_arm64.deb) |
+> | x86-64 | rpm | [razorpay\_linux\_amd64.rpm](https://razorpay.com/cli/latest/razorpay_linux_amd64.rpm) |
+> | ARM64 | rpm | [razorpay\_linux\_arm64.rpm](https://razorpay.com/cli/latest/razorpay_linux_arm64.rpm) |
+>
+> Or download using curl:
+>
+> **x86-64 (tar.gz):**
+>
+> ```bash Bash theme={null}
+> curl -fsSL https://razorpay.com/cli/latest/razorpay_linux_x86_64.tar.gz | tar -xz
+> ```
+>
+> **ARM64 (tar.gz):**
+>
+> ```bash Bash theme={null}
+> curl -fsSL https://razorpay.com/cli/latest/razorpay_linux_arm64.tar.gz | tar -xz
+> ```
+>
+> **x86-64 (deb):**
+>
+> ```bash Bash theme={null}
+> curl -fsSL https://razorpay.com/cli/latest/razorpay_linux_amd64.deb -o /tmp/razorpay.deb \
+> && sudo dpkg -i /tmp/razorpay.deb
+> ```
+>
+> **ARM64 (deb):**
+>
+> ```bash Bash theme={null}
+> curl -fsSL https://razorpay.com/cli/latest/razorpay_linux_arm64.deb -o /tmp/razorpay.deb \
+> && sudo dpkg -i /tmp/razorpay.deb
+> ```
+>
+> **x86-64 (rpm):**
+>
+> ```bash Bash theme={null}
+> curl -fsSL https://razorpay.com/cli/latest/razorpay_linux_amd64.rpm -o /tmp/razorpay.rpm \
+> && sudo rpm -i /tmp/razorpay.rpm
+> ```
+>
+> **ARM64 (rpm):**
+>
+> ```bash Bash theme={null}
+> curl -fsSL https://razorpay.com/cli/latest/razorpay_linux_arm64.rpm -o /tmp/razorpay.rpm \
+> && sudo rpm -i /tmp/razorpay.rpm
+> ```
+>
+> 2. Install based on the format you downloaded.
+>
+>    For `tar.gz`:
+>
+> ```bash Bash theme={null}
+> tar -xvf razorpay_linux_<arch>.tar.gz
+> sudo mv razorpay /usr/local/bin/
+> ```
+>
+> For `deb` (Debian and Ubuntu):
+>
+> ```bash Bash theme={null}
+> sudo dpkg -i razorpay_linux_<arch>.deb
+> ```
+>
+> For `rpm` (RHEL, Fedora and Amazon Linux):
+>
+> ```bash Bash theme={null}
+> sudo rpm -i razorpay_linux_<arch>.rpm
+> ```
+>
+> 3. Verify the installation.
+>
+> ```bash Bash theme={null}
+> razorpay --version
+> ```
+
+> [tab] Windows
+>
+> 1. Download the binary.
+>
+>    Download the binary that matches your architecture.
+>
+> | Architecture | Download |
+> | - | - |
+> | x86-64 | [razorpay\_windows\_x86\_64.zip](https://razorpay.com/cli/latest/razorpay_windows_x86_64.zip) |
+> | x86 (32-bit) | [razorpay\_windows\_i386.zip](https://razorpay.com/cli/latest/razorpay_windows_i386.zip) |
+>
+> Or download using curl in PowerShell:
+>
+> **x86-64:**
+>
+> ```bash PowerShell theme={null}
+> curl.exe -fsSL -o razorpay_windows_x86_64.zip https://razorpay.com/cli/latest/razorpay_windows_x86_64.zip
+> ```
+>
+> **x86 (32-bit):**
+>
+> ```bash PowerShell theme={null}
+> curl.exe -fsSL -o razorpay_windows_i386.zip https://razorpay.com/cli/latest/razorpay_windows_i386.zip
+> ```
+>
+> 2. Extract the archive.
+>
+>    Open PowerShell in the folder where you downloaded the file and run:
+>
+> ```bash PowerShell theme={null}
+> Expand-Archive razorpay_windows_<arch>.zip -DestinationPath .
+> ```
+>
+> 3. Add the binary to your Path environment variable.
+>
+>    1. Open **System Properties** → **Environment Variables**.
+>    2. Under **System variables**, select **Path** → **Edit** → **New**.
+>    3. Add the folder path where `razorpay.exe` is located.
+>    4. Click **OK** to save the changes.
+> 4. Verify the installation.
+>
+>    Open a new terminal and run:
+>
+> ```bash Bash theme={null}
+> razorpay --version
+> ```
+
+### Step 2: Configure Your API Credentials
+
+After installing the CLI, configure it with your API credentials to start making requests. Generate your keys from the [Razorpay Curlec Dashboard](https://dashboard.curlec.com/app/keys).
+
+You can configure credentials in two ways:
+
+**Option 1: Pass credentials directly in the command**
+
+```bash Bash theme={null}
+razorpay configure --key-id rzp_test_xxxxxxxxxxxx --key-secret xxxxxxxxxxxxxxxxxxxx
+```
+
+**Option 2: Use the interactive prompt**
+
+Run the command without arguments and enter your credentials when prompted:
+
+```bash Bash theme={null}
+razorpay configure
+```
+
+```bash Bash theme={null}
+Razorpay Key ID [None]: rzp_test_xxxxxxxxxxxx
+Razorpay Key Secret [None]: xxxxxxxxxxxxxxxxxxxx
+```
+
+> [!NOTE]
+>
+> **Test Mode and Live Mode**
+>
+> The CLI supports both Test Mode and Live Mode keys. Use Test Mode keys (prefixed with `rzp_test_`) while building and testing your integration.
+
+> [!NOTE]
+>
+> **Verify Your Setup**
+>
+> Once configured, run `razorpay --version` to confirm the CLI is installed and ready to use.
+
+## Related Information
+
+* [Authentication](https://razorpay.com/docs/my/api/authentication.md)
+* [Sandbox Setup](https://razorpay.com/docs/my/api/sandbox-setup.md)
+* [API Reference Guide](https://razorpay.com/docs/my/api)

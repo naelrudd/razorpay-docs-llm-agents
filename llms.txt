@@ -1,28 +1,27 @@
 # Razorpay
 
-- [India (1454 pages)](https://razorpay.com/docs/_llms/india.txt): Home, Payments, Engage, POS, Banking Plus, Payroll, Partners, API Reference, Developer Tools.
+- [India (1438 pages)](https://razorpay.com/docs/_llms/india.txt): Home, Payments, Engage, POS, Banking Plus, Payroll, Partners, API Reference, Developer Tools.
 - [Singapore (424 pages)](https://razorpay.com/docs/_llms/singapore.txt): Home, Payments, API Reference, Developer Tools.
-- [United States (449 pages)](https://razorpay.com/docs/_llms/united-states.txt): Home, Payments, API Reference, Developer Tools.
-
-## Optional
-
-- [Malaysia](https://curlec.com/docs)
+- [United States (424 pages)](https://razorpay.com/docs/_llms/united-states.txt): Home, Payments, API Reference, Developer Tools.
+- [Malaysia (473 pages)](https://razorpay.com/docs/_llms/malaysia.txt): Home, Payments, API Reference, Developer Tools.
 
 > The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.
 
 ## Indexes
 
-- [India (1454 pages)](https://razorpay.com/docs/_llms/india.txt): Home, Payments, Engage, POS, Banking Plus, Payroll, Partners, API Reference, Developer Tools.
-- [India / Payments (696 pages)](https://razorpay.com/docs/_llms/india/payments.txt): Solutions by Industry, Sign Up, Dashboard, Customers, Orders, Payments, International Payments, Payment Methods, Settlements, Refunds, Disputes, Payment Gateway, Ecommerce Plugins, Widgets, Magic Checkout, Razorpay - Payments on WhatsApp, Payment Links, Payment Button, Payment Pages, Webstore, Invoices, QR Codes, Offers, EMI², Subscriptions, Smart Collect, Optimizer, Route, Third-Party Validation, Payments Mobile App.
+- [India (1438 pages)](https://razorpay.com/docs/_llms/india.txt): Home, Payments, Engage, POS, Banking Plus, Payroll, Partners, API Reference, Developer Tools.
+- [India / Payments (697 pages)](https://razorpay.com/docs/_llms/india/payments.txt): Solutions by Industry, Sign Up, Dashboard, Customers, Orders, Payments, International Payments, Payment Methods, Settlements, Refunds, Disputes, Payment Gateway, Ecommerce Plugins, Widgets, Magic Checkout, Razorpay - Payments on WhatsApp, Payment Links, Payment Button, Payment Pages, Webstore, Invoices, QR Codes, Offers, EMI², Subscriptions, Smart Collect, Optimizer, Route, Third-Party Validation, Payments Mobile App.
 - [India / Payments / Payment Methods (59 pages)](https://razorpay.com/docs/_llms/india/payments/payment-methods.txt): Apple Pay, Cards, EMI, MOTO, UPI, Wallets, Transaction Limits.
 - [India / Payments / Payment Gateway (80 pages)](https://razorpay.com/docs/_llms/india/payments/payment-gateway.txt): Features, Web Integration, Android Integration, iOS Integration, React Native, Cordova & Ionic, Flutter Plugin, Capacitor Integration, Quick Integration, Server Integration.
 - [India / Payments / Ecommerce Plugins (54 pages)](https://razorpay.com/docs/_llms/india/payments/ecommerce-plugins.txt): Payment Gateway, Others.
 - [India / Payments / Magic Checkout (57 pages)](https://razorpay.com/docs/_llms/india/payments/magic-checkout.txt): Features, Web, Mobile SDKs, Ecommerce Plugins, Login With Razorpay (SSO), RTO Reduction, Order Settings, Analytics.
 - [India / Banking Plus (136 pages)](https://razorpay.com/docs/_llms/india/banking-plus.txt): Solutions by Industry, Account Types, Dashboard, Account Statement, Contacts, Fund Accounts, Payouts, Vendor Payments, Tax Payments, Accounting, Payout Links, Capital, APIs and Webhooks.
-- [India / API Reference (361 pages)](https://razorpay.com/docs/_llms/india/api-reference.txt): Introduction, Payments, Bills, Partners, Payouts.
+- [India / API Reference (344 pages)](https://razorpay.com/docs/_llms/india/api-reference.txt): Introduction, Payments, Bills, Partners, Payouts.
 - [Singapore (424 pages)](https://razorpay.com/docs/_llms/singapore.txt): Home, Payments, API Reference, Developer Tools.
 - [Singapore / Payments (246 pages)](https://razorpay.com/docs/_llms/singapore/payments.txt): Solutions by Industry, Sign Up, Dashboard, Customers, Orders, Payments, International Payments, Payment Methods, Settlements, Refunds, Payment Gateway, Ecommerce Plugins, Payment Links, Payment Pages, Offers, Subscriptions.
 - [Singapore / API Reference (152 pages)](https://razorpay.com/docs/_llms/singapore/api-reference.txt): Introduction, Payments.
-- [United States (449 pages)](https://razorpay.com/docs/_llms/united-states.txt): Home, Payments, API Reference, Developer Tools.
+- [United States (424 pages)](https://razorpay.com/docs/_llms/united-states.txt): Home, Payments, API Reference, Developer Tools.
 - [United States / Payments (151 pages)](https://razorpay.com/docs/_llms/united-states/payments.txt): Sign Up, Dashboard, Customers, Orders, Payments, International Payments, Payment Methods, Settlements, Refunds, Payment Gateway, Ecommerce Plugins, Invoicing & Billing Integrations, Payment Links, Payment Pages, Subscriptions.
-- [United States / API Reference (272 pages)](https://razorpay.com/docs/_llms/united-states/api-reference.txt): Introduction, Payments, Bills, Partners, Payouts.
+- [United States / API Reference (247 pages)](https://razorpay.com/docs/_llms/united-states/api-reference.txt): Introduction, Payments, Bills, Payouts.
+- [Malaysia (473 pages)](https://razorpay.com/docs/_llms/malaysia.txt): Home, Payments, API Reference, Developer Tools.
+- [Malaysia / Payments (329 pages)](https://razorpay.com/docs/_llms/malaysia/payments.txt): Solutions by Industry, Sign Up, Dashboard, Customers, Orders, Payments, International Payments, Payment Methods, Settlements, Refunds, Payment Gateway, Ecommerce Plugins, Payment Links, Payment Button, Payment Pages, Invoices, Subscriptions, Route, Payments Mobile App.
